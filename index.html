@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        show_reply()
+    });
+    function save_comment() {
+        let name = $('#name').val()
+        let comment = $('#comment').val()
+
+        function post_time() {
+            let today = new Date();
+            let year = today.toLocaleString('en-US', {
+                year: 'numeric',
+            });
+            let month = today.toLocaleString('en-US', {
+                month: '2-digit',
+            });
+            let day = today.toLocaleString('en-US', {
+                day: '2-digit',
+            });
+            let hour = today.getHours();
+            let minute = today.getMinutes();
+
+            return `${year}.${month}.${day} ${hour}:${minute}`
+        }
+        $.ajax({
+            type: 'POST',
+            url: '/detail',
+            data: { name_give: name,
+                comment_give: comment,
+                posttime_give: post_time()},
+            success: function (response) {
+                alert(response['msg'])
+                window.location.reload()
+            }
+        });
+    }
+    function show_reply() {
+        $.ajax({
+            type: "GET",
+            url: "/detail",
+            data: {},
+            success: function (response) {
+                let rows = response['replys']
+                for (let i = 0; i < rows.length; i++) {
+                    let name = rows[i]['name']
+                    let comment = rows[i]['comment']
+                    let posttime = rows[i]['posttime']
+
+                    let temp_html = `<div class="card">
+                                            <div class="card-body">
+                                                <blockquote class="blockquote mb-0">
+                                                    <p>${comment}</p>
+                                                    <footer class="blockquote-footer">${name} ${posttime}</footer>
+                                                </blockquote>
+                                            </div>
+                                        </div>`
+
+                    $('#comment-list').append(temp_html)
+                }
+            }
+        })
+    }
+</script>
+    </head>
+<body>
+<div class="mypost">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="name" placeholder="닉네임 입력">
+        <label for="floatingInput">닉네임</label>
+    </div>
+    <div class="form-floating">
+<textarea class="form-control" placeholder="댓글을 작성해보세요" id="comment"
+          style="height: 100px"></textarea>
+        <label for="floatingTextarea2">댓글내용</label>
+    </div>
+    <button onclick="save_comment()" type="button" class="btn btn-dark">댓글 남기기</button>
+</div>
+<div class="mycards" id="comment-list">
+</div>
+</body>
+</html>
