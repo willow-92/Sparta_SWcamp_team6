@@ -17,15 +17,8 @@
         * {
             font-family: 'Gowun Dodum', sans-serif;
         }
-        .main_menu {
-            display: flex;
-            flex-direction: row;
-            justify-content: left;
-            align-items: center;
 
-            padding: 10%, 20px;
 
-        }
         .banner {
             width: 100%;
             height: 250px;
@@ -39,114 +32,98 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+
         }
 
-        .banner_desc {
-
+        .banner_text {
+            text-align: left;
         }
 
-
-        .mytitle > button:hover {
-            border: 2px solid white;
+        .banner_text_with_button {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
 
-        .mypost {
-            max-width: 500px;
-            width: 95%;
-            margin: 20px auto 20px auto;
+        .new_word_test_button {
+            margin: 0 0 0 40px;
+            padding: 5px 20px 5px 20px;
 
-            box-shadow: 0px 0px 3px 0px gray;
-            padding: 20px;
+            border-radius: 10px;
+            border-color: transparent;
+
+            color: white;
+            background-color: #4B5FF6;
         }
 
-        .buttons {
-            margin-top: 10px;
-        }
-
-        .buttons > button {
-            border: 1px solid black;
-            margin: 0px 10px 0px 0px;
-        }
-
-        .mycomment {
-            max-width: 500px;
-            width: 95%;
-            margin: 20px auto 20px auto;
-        }
 
     </style>
-    <script>
-        $(document).ready(function () {
-            $.ajax({
-                type: "GET",
-                url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
-                data: {},
-                success: function (response) {
-                    let url = response['url']
-                    let msg = response['temp']
-                    $('#temp').text(msg)
-                }
-            })
-        });
     </script>
 </head>
 
 <body>
-<div class="menu">
-    <div class ="main_menu">
-        어쩔사전
+
+<!--네비게이션 바-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#!"><img src="./../Src/img/main_button.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">List</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">All Products</a></li>
+                        <li>
+                            <hr class="dropdown-divider"/>
+                        </li>
+                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div style="position: relative; top:-12px; right:10px;">
+                <label for="exampleDataList" class="form-label"></label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                       placeholder="Search" style="width: 200px;">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                </datalist>
+            </div>
+            <form class="d-flex">
+                <button class="btn btn-outline-dark" type="submit">
+                    <i class="bi-cart-fill me-1"></i>
+                    이건 몰랐지?! 신조어 등록하기
+                </button>
+            </form>
+        </div>
     </div>
-</div>
+</nav>
+
 <div class="banner">
-    <h2>오늘도 MZ말을 못알아들었다...😅 혹시 못알아 듣고 있다면?<br>
-    최신 신조어 백과서전, 어쩔사전!</h2>
-    <h6>신조어(新造語, Neologism)란? <br> 새로 만들어진 단어 및 용어 가운데 표준어로 등재되지 않은 말</h6>
-    <h1></h1>
-
-</div>
-<div class="mypost">
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">닉네임</label>
-    </div>
-    <div class="card h-75">
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
-                      style="height: 100px"></textarea>
-            <label for="floatingTextarea">응원댓글</label>
+    <div class="banner_text">
+        <h2>오늘도 MZ말을 못알아들었다...😅 혹시 못알아 듣고 있다면?<br>최신 신조어 백과서전, 어쩔사전!</h2>
+        <div class="banner_text_with_button">
+            <h5>신조어(新造語, Neologism)란? <br> 새로 만들어진 단어 및 용어 가운데 표준어로 등재되지 않은 말</h5>
+            <button class=new_word_test_button>
+                <h4>혹시 신조어가 자신있다면?</h4>
+                신조어TEST 바로가기
+            </button>
         </div>
+
     </div>
 
-    <div class="buttons">
-        <button type="button" class="btn btn-dark">응원남기기</button>
-    </div>
-</div>
-<div class="mycomment">
-    <div class="card" style="margin: 10px auto 10px auto">
-        <div class="card-body">
-            <blockquote class="blockquote mb-0">
-                <p>새로나온 앨범 너무 멋져요!</p>
-                <footer class="blockquote-footer">호빵맨</footer>
-            </blockquote>
-        </div>
-    </div>
-    <div class="card" style="margin: 10px auto 10px auto">
-        <div class="card-body">
-            <blockquote class="blockquote mb-0">
-                <p>새로나온 앨범 너무 멋져요!</p>
-                <footer class="blockquote-footer">호빵맨</footer>
-            </blockquote>
-        </div>
-    </div>
-    <div class="card" style="margin: 10px auto 10px auto">
-        <div class="card-body">
-            <blockquote class="blockquote mb-0">
-                <p>새로나온 앨범 너무 멋져요!</p>
-                <footer class="blockquote-footer">호빵맨</footer>
-            </blockquote>
-        </div>
-    </div>
-</div>
 
 </body>
 
