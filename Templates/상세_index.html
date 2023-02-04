@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<body lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -38,7 +38,7 @@
 
         .mycards {
             margin: 110px auto 0px auto;
-            width: 95%;
+            width: 90%;
             max-width: 1200px;
         }
 
@@ -87,49 +87,82 @@
             top: 200px;
             right: 100px;
         }
+
+        <script type="text/javascript">
+                                      function
+
+        clip
+        (
+        )
+        {
+
+            var url = ''
+        ;
+            var textarea = document . createElement("textarea")
+        ;
+            document . body . appendChild(textarea)
+        ;
+            url = window . document . location . href
+        ;
+            textarea . value = url
+        ;
+            textarea . select()
+        ;
+            document . execCommand("copy")
+        ;
+            document . body . removeChild(textarea)
+        ;
+        alert
+        (
+        "URL이 복사되었습니다."
+        )
+}
+        .btn-outline-dark{
+
+            width: 250px;
+            margin-right: 120px;
+        }
+
+</script>
     </style>
 </head>
 
-<body>
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+</body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!"><b>어 쩔 사 전</b></a>
+                <a href="#!"><img src="./../Src/img/main_button.png"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <ul class="navbar-nav ms-lg-2">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">List</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="C:/Users/Administrator/Desktop/sparta/Sparta_SWcamp_team6-main/templates/contents.html">신조어 목록</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">어쩔상점</a></li>
                     </ul>
-                    <div style="position: relative; top:-12px; right:10px;">
-                    <label for="exampleDataList" class="form-label"></label>
-                    <input class="form-control" list="datalistOptions" id="exampleDataList"
-                           placeholder="Search" style="width: 200px;">
-                    <datalist id="datalistOptions">
-                        <option value="San Francisco">
-                        <option value="New York">
-                        <option value="Seattle">
-                        <option value="Los Angeles">
-                        <option value="Chicago">
-                    </datalist>
-                        </div>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            이건 몰랐지?! 신조어 등록하기
-                        </button>
-                    </form>
                 </div>
             </div>
-        </nav>
+      <div style="position: relative; top:-12px; right:30px;">
+          <label for="exampleDataList" class="form-label"></label>
+          <input class="form-control" list="datalistOptions" id="exampleDataList"
+                 placeholder="Search" style="width: 200px;">
+          <datalist id="datalistOptions">
+              <option value="San Francisco">
+              <option value="New York">
+              <option value="Seattle">
+              <option value="Los Angeles">
+              <option value="Chicago">
+          </datalist>
+      </div>
+      <div class ="button">
+      <form class="d-flex">
+          <button class="btn btn-outline-dark" type="submit">
+              <i class="bi-cart-fill me-1"></i>
+              이건 몰랐지?! 신조어 등록하기
+          </button>
+      </form>
+      </div>
+      </div>
+      </div>
+  </nav>
 
 <div class="mycards">
     <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -145,14 +178,47 @@
 <div class="mybtns2">
     <div class="d-grid gap-2 col-3 mx-auto">
         <button class="btn btn-light" type="button">💖 <b>유익했어요</b></button>
-        <button class="btn btn-light" type="button">🔗 <b>친구에게 공유하기 (링크복사)</b></button>
+        <button class="btn btn-light" type="button"><a href="#" onclick="clip(); return false;">🔗 <b>친구에게 공유하기 (링크복사)</b></a></button>
     </div>
 </div>
+
+
+
+
 
 <div class="mypost">
     <div style="position: relative; top:-30px;">
         <h7><b>작성자 :</b></h7>
         </div>
+
+   <!--<script>
+            function elapsedTime(date) {
+                const start = new Date(date);
+                const end = new Date();
+
+                const diff = (end - start) / 1000;
+
+                const times = [
+                    {name: '년', milliSeconds: 60 * 60 * 24 * 365},
+                    {name: '개월', milliSeconds: 60 * 60 * 24 * 30},
+                    {name: '일', milliSeconds: 60 * 60 * 24},
+                    {name: '시간', milliSeconds: 60 * 60},
+                    {name: '분', milliSeconds: 60},
+                ];
+
+                for (const value of times) {
+                    const betweenTime = Math.floor(diff / value.milliSeconds);
+
+                    if (betweenTime > 0) {
+                        return `${betweenTime}${value.name} 전`;
+                    }
+                }
+                return '방금 전';
+            }
+
+            elapsedTime('2022-11-15');
+    </scrpit>-->
+
     <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">신조어</label>
@@ -172,9 +238,9 @@
         <button type="button" class="btn btn-secondary">10대</button>
         <button type="button" class="btn btn-secondary">20대</button>
     </div>
-    <iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="300" frameborder=0 allowfullscreen></iframe>
+    <!--<iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="250" frameborder=0 allowfullscreen></iframe>-->
 </div>
- <div class ="comments">
+ <!-- <div class ="comments">
 <div id="disqus_thread"></div>
 <script>
     /**
@@ -194,7 +260,7 @@
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
+</div>-->
 </body>
 
 </html>
