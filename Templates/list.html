@@ -15,35 +15,60 @@
     <title>어쩔사전</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="./styles.css" rel="stylesheet"/>
+
     <style>
-        * {
-            font-family: 'Gowun Dodum', sans-serif;
+
+        .NewWordCard_listpage {
+            padding: 0px 5% 5% 5%;
         }
 
+        .button_container {
+            padding: 5% 5% 30px 5%;
+        }
+
+        .card-container {
+            display: flex;
+        }
+
+        .card {
+            padding: 10px 10px 10px 10px;
+            margin: 10px 10px 10px 10px
+        }
+
+        .card-title {
+            font-size: xx-large;
+            font-weight: bolder;
 
 
+            padding: 10px 10px 10px 0px;
+        }
+
+        .chain_icon {
+            width: 20px;
+
+            float: right;
+        }
+
+        .card-text {
+            font-size: x-large;
+            line-height: 1.1em;
+
+            padding-bottom: 10px;
+        }
+
+        .btn-primary {
+            padding: 2px 10px 2px 10px;
+            margin: 0px 0px 0px 5px;
+        }
+
+        .in-card-button {
+            float: right;
+        }
 
 
     </style>
 </head>
-<header class="bg-home py-5">
-            <div class="container px-4 px-lg-5 my-4">
-                <div class="text-start text-white">
-                    <h4 class="display-6 fw-bolder">‍오늘도 MZ말을 못 알아들었다😂<br>최신 신조어 백과사전, 어쩔사전!</h4>
-                    <h6 style="line-height: 1.5em">신조어(新造語, Neologism)란? <br> 새로 만들어진 단어 및 용어 가운데 표준어로 등재되지 않은 말</h6></p>
-                </div>
-
-                <div class="d-flex justify-content-center h-100">
-                  <div class="searchbar shadow bg-body-tertiary rounded">
-                    <input class="search_input" type="text" name="" placeholder="찾고 싶은 신조어를 검색해 보세요!">
-                    <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-                  </div>
-                </div>
-
-            </div>
-    </header>
-<body>
 <!--네비게이션 바-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
@@ -89,232 +114,253 @@
         </div>
     </div>
 </nav>
+<header class="bg-home py-5">
+    <div class="container px-4 px-lg-5 my-4">
+        <div class="text-start text-white">
+            <h4 class="display-6 fw-bolder">‍오늘도 MZ말을 못 알아들었다😂<br>최신 신조어 백과사전, 어쩔사전!</h4>
+            <h6 style="line-height: 1.5em">신조어(新造語, Neologism)란? <br> 새로 만들어진 단어 및 용어 가운데 표준어로 등재되지 않은 말</h6></p>
+        </div>
 
-<div class="NewWordCard_listpage">
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title_listpage">
-                        잼민이<img class="chain_icon_listpage" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text_listpage">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary_listpage">10대</button>
-                    <button type="button" class="btn btn-primary_listpage">20대</button>
-                </div>
+        <div class="d-flex justify-content-center h-100">
+            <div class="searchbar shadow bg-body-tertiary rounded">
+                <input class="search_input" type="text" name="" placeholder="찾고 싶은 신조어를 검색해 보세요!">
+                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
             </div>
         </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
 
+    </div>
+</header>
+<body>
+<div class="button_container">
+    <button type="button" class="btn btn-primary">가나다순</button>
+    <button type="button" class="btn btn-primary">연령대순</button>
 </div>
 
+<div class="NewWordCard_listpage">
+    <div class=card-container>
+        <div class="card mb-3" style="max-width: 50%; max-height: 25%; ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="./../Src/img/profile.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">잼민이<img src="./../Src/img/chain_icon.png" alt=""></h1>
 
+                    <h6 class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을
+                            통틀어 지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</h6>
+                    <div class="in-card-button">
+                    <button type="button" class="btn btn-primary">10대</button>
+                    <button type="button" class="btn btn-primary">10대</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="card mb-3" style="max-width: 50%; max-height: 25%; ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="./../Src/img/profile.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">잼민이<img src="./../Src/img/chain_icon.png" alt=""></h1>
+
+                    <h6 class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을
+                            통틀어 지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</h6>
+                    <div class="in-card-button">
+                    <button type="button" class="btn btn-primary">10대</button>
+                    <button type="button" class="btn btn-primary">10대</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class=card-container>
+        <div class="card mb-3" style="max-width: 50%; max-height: 25%; ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="./../Src/img/profile.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">잼민이<img src="./../Src/img/chain_icon.png" alt=""></h1>
+
+                    <h6 class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을
+                            통틀어 지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</h6>
+                    <div class="in-card-button">
+                    <button type="button" class="btn btn-primary">10대</button>
+                    <button type="button" class="btn btn-primary">10대</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="card mb-3" style="max-width: 50%; max-height: 25%; ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="./../Src/img/profile.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">잼민이<img src="./../Src/img/chain_icon.png" alt=""></h1>
+
+                    <h6 class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을
+                            통틀어 지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</h6>
+                    <div class="in-card-button">
+                    <button type="button" class="btn btn-primary">10대</button>
+                    <button type="button" class="btn btn-primary">10대</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class=card-container>
+        <div class="card mb-3" style="max-width: 50%; max-height: 25%; ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="./../Src/img/profile.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">잼민이<img src="./../Src/img/chain_icon.png" alt=""></h1>
+
+                    <h6 class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을
+                            통틀어 지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</h6>
+                    <div class="in-card-button">
+                    <button type="button" class="btn btn-primary">10대</button>
+                    <button type="button" class="btn btn-primary">10대</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="card mb-3" style="max-width: 50%; max-height: 25%; ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="./../Src/img/profile.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">잼민이<img src="./../Src/img/chain_icon.png" alt=""></h1>
+
+                    <h6 class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을
+                            통틀어 지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</h6>
+                    <div class="in-card-button">
+                    <button type="button" class="btn btn-primary">10대</button>
+                    <button type="button" class="btn btn-primary">10대</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class=card-container>
+        <div class="card mb-3" style="max-width: 50%; max-height: 25%; ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="./../Src/img/profile.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">잼민이<img src="./../Src/img/chain_icon.png" alt=""></h1>
+
+                    <h6 class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을
+                            통틀어 지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</h6>
+                    <div class="in-card-button">
+                    <button type="button" class="btn btn-primary">10대</button>
+                    <button type="button" class="btn btn-primary">10대</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="card mb-3" style="max-width: 50%; max-height: 25%; ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="./../Src/img/profile.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">잼민이<img src="./../Src/img/chain_icon.png" alt=""></h1>
+
+                    <h6 class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을
+                            통틀어 지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</h6>
+                    <div class="in-card-button">
+                    <button type="button" class="btn btn-primary">10대</button>
+                    <button type="button" class="btn btn-primary">10대</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class=card-container>
+        <div class="card mb-3" style="max-width: 50%; max-height: 25%; ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="./../Src/img/profile.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">잼민이<img src="./../Src/img/chain_icon.png" alt=""></h1>
+
+                    <h6 class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을
+                            통틀어 지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</h6>
+                    <div class="in-card-button">
+                    <button type="button" class="btn btn-primary">10대</button>
+                    <button type="button" class="btn btn-primary">10대</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="card mb-3" style="max-width: 50%; max-height: 25%; ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="./../Src/img/profile.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">잼민이<img src="./../Src/img/chain_icon.png" alt=""></h1>
+
+                    <h6 class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을
+                            통틀어 지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</h6>
+                    <div class="in-card-button">
+                    <button type="button" class="btn btn-primary">10대</button>
+                    <button type="button" class="btn btn-primary">10대</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+ 
+    <br>
+</div>
 </body>
 
 </html>
