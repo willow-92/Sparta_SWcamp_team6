@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <title>최신 신조어 백과사전, 어쩔사전! 어쩔사전</title>
         <!-- Favicon-->
-        <link rel="icon" href="assets/favicon.ico"/>
+        <link rel="icon" href="./../Src/img/favicon.ico"/>
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a href="#!"><img src="assets/main_button.png"/></a>
+                <a href="#!"><img src="./../Src/img/main_button.png"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-lg-2">
@@ -38,36 +38,25 @@
                     <h4 class="display-6 fw-bolder">‍오늘도 MZ말을 못 알아들었다😂<br>최신 신조어 백과사전, 어쩔사전!</h4>
                     <h6 style="line-height: 1.5em">신조어(新造語, Neologism)란? <br> 새로 만들어진 단어 및 용어 가운데 표준어로 등재되지 않은 말</h6></p>
                 </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-sm-between">
-                  <button type="button" class="btn btn-primary btn-lg" onclick="window.open('https://doda.app/quiz/WfpU7ZN5P2')">신조어가 자신있다면?
-                      <img src="https://em-content.zobj.net/source/microsoft-teams/337/smiling-face-with-sunglasses_1f60e.png" width="30" height="30"/>
-                      <p class="btn-sm text-white-50 mb-0" style="padding-top: 0px;">신조어 TEST 바로가기</p> </button>
-                </div>
-                <div class="contents-add-button">
 
+                <div class="d-flex justify-content-center h-100">
+                  <div class="searchbar shadow bg-body-tertiary rounded">
+                    <input class="search_input" type="text" name="" placeholder="찾고 싶은 신조어를 검색해 보세요!">
+                    <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                  </div>
                 </div>
+
             </div>
         </header>
-        <div class = "container px-4 px-lg-5 mb-5">
-                <div class="headline-img">
-                    <img src="assets/profile.jpg" alt = "프로필이미지" >
-                </div>
-                <div class ="healine-txt">
-                    <h2 class="fw-bolder">킹세종</h2>
-                    <h5>신조어 <span id="temp" style="font-weight: bold">12,390</span>건</h5>
-                </div>
 
-            </div>
 
-        <div class="container px-4 px-lg-5">
-              <div class="d-flex justify-content-center h-100">
-                <div class="searchbar shadow bg-body-tertiary rounded">
-                  <input class="search_input" type="text" name="" placeholder="찾고 싶은 신조어를 검색해 보세요!">
-                  <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-                </div>
+        <div class = "container px-4 px-lg-5 mb-5" style="padding: 30px 0">
+            <div class="headline-banner" role="button" tabindex="0"
+                 data-attribute-id="typeTest__enter__click" data-page-path="/">
+              <div class="headline-banner-row">
+                  신조어 어디까지 알아? <img src="https://em-content.zobj.net/source/microsoft-teams/337/smiling-face-with-sunglasses_1f60e.png" width="30" height="30"/>
+              <div class="btn-sm text-white-50 mb-0" style="padding-top: 0px;">신조어 TEST 바로가기</div>
               </div>
-             </div>
-
         </div>
 
         <!-- Section-->
@@ -75,7 +64,7 @@
             <div class="container px-4 px-lg-5 mt-4">
                 <h5 style="margin-bottom: 1.4rem">당신이 모르는 신조어 <span id="temp" style="font-weight: bold">12,390</span>건 등록 😎</h5>
 
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" style="margin-bottom: 20px">
                     <div class="col mb-5">
                         <div class="card-wrap h-100 shadow">
                             <!-- Product details-->
@@ -338,8 +327,14 @@
                         </div>
                     </div>
 
-                    </div>
                 </div>
+                <div class="more d-grid gap-4 col-4 mx-auto" style="margin-bottom: 100px; padding-top: 10px;">
+                  <button type="button" class="btn btn-primary btn-lg"
+                          onclick="window.open('./../templates/list.html')">더보기
+                  </button>
+                </div>
+
+
             </div>
         </section>
         <!-- Footer-->
