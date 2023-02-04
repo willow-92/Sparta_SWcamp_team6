@@ -38,7 +38,7 @@
 
         .mycards {
             margin: 110px auto 0px auto;
-            width: 95%;
+            width: 90%;
             max-width: 1200px;
         }
 
@@ -87,6 +87,38 @@
             top: 200px;
             right: 100px;
         }
+
+        <script type="text/javascript">
+                                      function
+
+        clip
+        (
+        )
+        {
+
+            var url = ''
+        ;
+            var textarea = document . createElement("textarea")
+        ;
+            document . body . appendChild(textarea)
+        ;
+            url = window . document . location . href
+        ;
+            textarea . value = url
+        ;
+            textarea . select()
+        ;
+            document . execCommand("copy")
+        ;
+            document . body . removeChild(textarea)
+        ;
+        alert
+        (
+        "URL이 복사되었습니다."
+        )
+}
+
+</script>
     </style>
 </head>
 
@@ -145,14 +177,47 @@
 <div class="mybtns2">
     <div class="d-grid gap-2 col-3 mx-auto">
         <button class="btn btn-light" type="button">💖 <b>유익했어요</b></button>
-        <button class="btn btn-light" type="button">🔗 <b>친구에게 공유하기 (링크복사)</b></button>
+        <button class="btn btn-light" type="button"><a href="#" onclick="clip(); return false;">🔗 <b>친구에게 공유하기 (링크복사)</b></a></button>
     </div>
 </div>
+
+
+
+
 
 <div class="mypost">
     <div style="position: relative; top:-30px;">
         <h7><b>작성자 :</b></h7>
         </div>
+
+   <!--<script>
+            function elapsedTime(date) {
+                const start = new Date(date);
+                const end = new Date();
+
+                const diff = (end - start) / 1000;
+
+                const times = [
+                    {name: '년', milliSeconds: 60 * 60 * 24 * 365},
+                    {name: '개월', milliSeconds: 60 * 60 * 24 * 30},
+                    {name: '일', milliSeconds: 60 * 60 * 24},
+                    {name: '시간', milliSeconds: 60 * 60},
+                    {name: '분', milliSeconds: 60},
+                ];
+
+                for (const value of times) {
+                    const betweenTime = Math.floor(diff / value.milliSeconds);
+
+                    if (betweenTime > 0) {
+                        return `${betweenTime}${value.name} 전`;
+                    }
+                }
+                return '방금 전';
+            }
+
+            elapsedTime('2022-11-15');
+    </scrpit>-->
+
     <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">신조어</label>
@@ -172,9 +237,9 @@
         <button type="button" class="btn btn-secondary">10대</button>
         <button type="button" class="btn btn-secondary">20대</button>
     </div>
-    <iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="300" frameborder=0 allowfullscreen></iframe>
+    <!--<iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="250" frameborder=0 allowfullscreen></iframe>-->
 </div>
- <div class ="comments">
+ <!-- <div class ="comments">
 <div id="disqus_thread"></div>
 <script>
     /**
@@ -194,7 +259,7 @@
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
+</div>-->
 </body>
 
 </html>
