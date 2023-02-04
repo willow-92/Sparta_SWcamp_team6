@@ -7700,7 +7700,7 @@ textarea.form-control-lg {
 
 
 .text-start {
-  text-align: left !important;
+  text-align: center !important;
 }
 
 .text-end {
@@ -7947,14 +7947,20 @@ textarea.form-control-lg {
 }
 
 .headline-banner-row {
-  padding:28px 0 22px 28px;
-  background-position :right -130px top 0;
+  padding:30px 0 22px 50px;
   font-weight:800;
-  font-size : 1.3em;
+  font-size : 1.2rem;
+
+}
+
+.headline-banner-row2 {
+  font-weight:600;
+  font-size : 0.8em;
+
 }
 
 .headline-img {
-  max-width : 1060px
+  max-width : 900px
   width: 90%
   display: inline-block;
   position: relative;
@@ -7976,12 +7982,12 @@ textarea.form-control-lg {
 }
 
 .searchbar{
-    width: 100%;
+    width: 50%;
     display: inline-block;
     margin-bottom: auto;
     margin-top: auto;
     height: 60px;
-    background-color: #F5F6F9;
+    background-color: white;
     border-radius: 10px;
     padding: 10px;
 }
@@ -7989,7 +7995,7 @@ textarea.form-control-lg {
 .search_input{
     border: 0;
     outline: 0;
-    width: 90%;
+    width: 70%;
     background: none;
     caret-color:transparent;
     line-height: 40px;
@@ -8037,7 +8043,7 @@ textarea.form-control-lg {
 }
 
 .rounded {
-  border-radius: 0.25rem !important;
+  border-radius: 0.3rem !important;
 }
 
 .rounded-0 {
@@ -9834,7 +9840,7 @@ textarea.form-control-lg {
   }
 
   .ms-lg-2 {
-    margin-left: 0.5rem !important;
+    margin-left: 1.4rem !important;
   }
 
   .ms-lg-3 {
