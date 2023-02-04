@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<body lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -117,51 +117,52 @@
         "URL이 복사되었습니다."
         )
 }
+        .btn-outline-dark{
+
+            width: 250px;
+            margin-right: 120px;
+        }
 
 </script>
     </style>
 </head>
 
-<body>
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+</body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!"><b>어 쩔 사 전</b></a>
+                <a href="#!"><img src="./../Src/img/main_button.png"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <ul class="navbar-nav ms-lg-2">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">List</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="C:/Users/Administrator/Desktop/sparta/Sparta_SWcamp_team6-main/templates/contents.html">신조어 목록</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">어쩔상점</a></li>
                     </ul>
-                    <div style="position: relative; top:-12px; right:10px;">
-                    <label for="exampleDataList" class="form-label"></label>
-                    <input class="form-control" list="datalistOptions" id="exampleDataList"
-                           placeholder="Search" style="width: 200px;">
-                    <datalist id="datalistOptions">
-                        <option value="San Francisco">
-                        <option value="New York">
-                        <option value="Seattle">
-                        <option value="Los Angeles">
-                        <option value="Chicago">
-                    </datalist>
-                        </div>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            이건 몰랐지?! 신조어 등록하기
-                        </button>
-                    </form>
                 </div>
             </div>
-        </nav>
+      <div style="position: relative; top:-12px; right:30px;">
+          <label for="exampleDataList" class="form-label"></label>
+          <input class="form-control" list="datalistOptions" id="exampleDataList"
+                 placeholder="Search" style="width: 200px;">
+          <datalist id="datalistOptions">
+              <option value="San Francisco">
+              <option value="New York">
+              <option value="Seattle">
+              <option value="Los Angeles">
+              <option value="Chicago">
+          </datalist>
+      </div>
+      <div class ="button">
+      <form class="d-flex">
+          <button class="btn btn-outline-dark" type="submit">
+              <i class="bi-cart-fill me-1"></i>
+              이건 몰랐지?! 신조어 등록하기
+          </button>
+      </form>
+      </div>
+      </div>
+      </div>
+  </nav>
 
 <div class="mycards">
     <div class="row row-cols-1 row-cols-md-4 g-4">
