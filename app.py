@@ -4,12 +4,20 @@ app = Flask(__name__)
 
 # mongo db
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://test:sparta@cluster0.hy28zsk.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://sw-camp-team6:team6@cluster0.3hlvzux.mongodb.net/?retryWrites=true&w=majority')
 db = client.dbsparta
 
 @app.route('/')
+def main():
+    return render_template('index.html')
+
+@app.route('/home')
 def home():
     return render_template('index.html')
+
+@app.route('/list')
+def list():
+    return render_template('list.html')
 
 @app.route("/detail", methods=["POST"])
 def reply_post():

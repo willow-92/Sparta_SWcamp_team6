@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <script>$('.Nword_input').change(function () {
+        $('#id_check_sucess').hide();
+        $('.id_overlap_button').show();
+        $('.Nword_input').attr("check_result", "fail");
+    })
+    if ($('.Nword_input').val() == '') {
+        alert('이메일을 입력해주세요.')
+        return;
+    }</script>
+    <script>
+        $('.Nname_input').change(function () {
+            $('#id_check_sucess').hide();
+            $('.id_overlap_button').show();
+            $('.Nname_input').attr("check_result", "fail");
+        })
+        if ($('.Nname_input').val() == '') {
+            alert('이메일을 입력해주세요.')
+            return;
+        }
+    </script>
+
+    <title>어쩔사전</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .NewWordCard {
+            padding: 10% 5% 5% 5%;
+        }
+
+
+        .card-title {
+            font-size: x-large;
+            font-weight: bolder;
+
+            padding: 10px 10px 0px 10px;
+        }
+
+        .chain_icon {
+            width: 20px;
+
+            float: right;
+        }
+
+        .card-text {
+            padding: 0 0 0px 10px;
+            line-height: 1.1em;
+        }
+
+        .btn-primary {
+            padding: 2px 10px 2px 10px;
+            margin: 0px 0px 0px 5px;
+        }
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+<!--네비게이션 바-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#!"><img src="./../Src/img/main_button.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">List</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">All Products</a></li>
+                        <li>
+                            <hr class="dropdown-divider"/>
+                        </li>
+                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div style="position: relative; top:-12px; right:10px;">
+                <label for="exampleDataList" class="form-label"></label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Search"
+                       style="width: 200px;">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                </datalist>
+            </div>
+            <form class="d-flex">
+                <button class="btn btn-outline-dark" type="submit">
+                    <i class="bi-cart-fill me-1"></i>
+                    이건 몰랐지?! 신조어 등록하기
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!--신조어등록란-->
+<h1><b>신조어 등록</b></h1><br>
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="newword">신조어명<span style="color:red">*</span></label>
+        </div>
+        <div class="col-auto">
+            <input type="text" id="inputNewword" class="form-control" aria-describedby="NewwordHelpInline"check_result="fail" required/>
+            <span id="NewwordHelpInline" style="display: none;" class="form-text">⚠️앗!이미 등록된 신조어가 있다네요!? </span>
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary mb-3" onclick="Nword_overlap_check()">중복확인</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<form class="row g-3">
+    <div class="col-sm-10">
+        <label for="Nname">닉네임<span style="color:red">*</span></label>
+    </div>
+    <div class="col-auto">
+        <input type="text" class="form-control" name="Nname" check_result="fail" required/>
+        <h6 id="Nname_check_sucess" style="display: none;">⚠️이미 등록된 닉네임인데,더 독창적인 닉네임을 생각해볼까요?</h6>
+    </div>
+    <div class="col-auto">
+        <button type="button" class="btn btn-primary mb-3" onclick="Nname_overlap_check()">중복검사</button>
+        <br><br>
+    </div>
+</form>
+
+<form class="row g-2">
+    <div class="col-auto">
+        <label for="ImageURL">관련 이미지 URL</label>
+    </div>
+    <div class="col-auto">
+        <input style="width:400px" type="image" class="form-control" name="ImageURL" check_result="fail" required/>
+        <br><br>
+    </div>
+</form>
+
+
+<label for="youTubeURL">Youtube URL</label>
+<input style="background-color:white; color:black;width:500px;" =  type="text" class="youTubeURL_input" name="youTubeURL
+" check_result="fail" required/>
+<br><br>
+
+<label for="descrip">설명<span style="color:red">*</span></label>
+<input style="background-color:white; color:black;padding:20px;width:800px;height:400px;" =  type="text" class="
+form-control" name="descrip" check_result="fail" required/>
+<br><br>
+
+<label for="UseAge">신조어 사용 연령층</label><br>
+<br><br>
+
+<input type="submit" value="Submit">
+<input type="reset">
+
+
+</body>
+
+
+</html>
