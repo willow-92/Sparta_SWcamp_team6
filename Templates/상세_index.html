@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>어쩔사전</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .mytitle {
+
+            color: black;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+
+        .mycomment {
+            color: gray;
+        }
+
+        .mycards {
+            margin: 110px auto 0px auto;
+            width: 95%;
+            max-width: 1200px;
+        }
+
+        .mypost {
+            position: absolute;
+            top: 90px;
+            left: 680px;
+            width: 95%;
+            max-width: 500px;
+            margin: 70px auto 0px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 3px 0px white;
+        }
+
+        .mybtns {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+            margin-right: 325px;
+        }
+
+        .mybtns2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+            margin-right: 915px;
+            margin-left: -5px;
+        }
+
+        .mybtns2 > button {
+            margin: 10px;
+        }
+
+        .mybtns > button {
+            margin-right: 10px;
+        }
+
+        .comments {
+            width:30%;
+            position: absolute;
+            top: 200px;
+            right: 100px;
+        }
+    </style>
+</head>
+
+<body>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!"><b>어 쩔 사 전</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">List</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div style="position: relative; top:-12px; right:10px;">
+                    <label for="exampleDataList" class="form-label"></label>
+                    <input class="form-control" list="datalistOptions" id="exampleDataList"
+                           placeholder="Search" style="width: 200px;">
+                    <datalist id="datalistOptions">
+                        <option value="San Francisco">
+                        <option value="New York">
+                        <option value="Seattle">
+                        <option value="Los Angeles">
+                        <option value="Chicago">
+                    </datalist>
+                        </div>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            이건 몰랐지?! 신조어 등록하기
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+<div class="mycards">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://w.namu.la/s/22e9641b0350909fd2c7b809bcc16df2a4c1b5ea7fa8ca404e3b818870606598cf8c361c1acc407804bd2ab18dcd7bd194944c4d4aae0e43c6f45108f49013e8fdf7aa9c5d655c1f75d8422651933a0c82942b4c548e9de4280b73767b67742f18afaf8448e74f2bd7afa2bdfc4c625f"
+                     class="card-img-top" alt="...">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mybtns2">
+    <div class="d-grid gap-2 col-3 mx-auto">
+        <button class="btn btn-light" type="button">💖 <b>유익했어요</b></button>
+        <button class="btn btn-light" type="button">🔗 <b>친구에게 공유하기 (링크복사)</b></button>
+    </div>
+</div>
+
+<div class="mypost">
+    <div style="position: relative; top:-30px;">
+        <h7><b>작성자 :</b></h7>
+        </div>
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">신조어</label>
+    </div>
+<div style="position: relative; top:-5px;">
+    <h7><b>설명</b></h7>
+</div>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                  style="height: 200px"></textarea>
+        <label for="floatingTextarea2">코멘트</label>
+    </div>
+    <div style="position: relative; top:10px;">
+        <h7><b>신조어 사용 연령층</b></h7>
+    </div>
+    <div class="mybtns">
+        <button type="button" class="btn btn-secondary">10대</button>
+        <button type="button" class="btn btn-secondary">20대</button>
+    </div>
+    <iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="300" frameborder=0 allowfullscreen></iframe>
+</div>
+ <div class ="comments">
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://eojjeolsajeon.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</body>
+
+</html>
