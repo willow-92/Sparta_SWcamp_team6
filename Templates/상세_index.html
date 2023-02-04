@@ -174,6 +174,11 @@
             width: 300px;
         }
 
+        .video{
+            position: absolute;
+            bottom:-140px;
+        }
+
 </script>
     </style>
 </head>
@@ -196,20 +201,15 @@
           <input class="form-control" list="datalistOptions" id="exampleDataList"
                  placeholder="Search" style="width: 200px;">
           <datalist id="datalistOptions">
-              <option value="San Francisco">
-              <option value="New York">
-              <option value="Seattle">
-              <option value="Los Angeles">
-              <option value="Chicago">
+              <option value="잼민이">
+              <option value="짜짜박박">
+              <option value="중꺽마">
+              <option value="머선129">
           </datalist>
       </div>
       <div class ="button">
       <form class="d-flex">
           <button type="button" class="btn btn-primary"><b>이건 몰랐지?! 신조어 등록하기</b></button>
-          <!--<button class="btn btn-outline-dark" type="submit">
-              <i class="bi-cart-fill me-1"></i>
-              이건 몰랐지?! 신조어 등록하기
-          </button>-->
       </form>
       </div>
       </div>
@@ -290,7 +290,9 @@
         <button type="button" class="btn btn-secondary">10대</button>
         <button type="button" class="btn btn-secondary">20대</button>
     </div>
-    <!--<iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="250" frameborder=0 allowfullscreen></iframe>-->
+    <div class="video">
+    <iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="250" frameborder=0 allowfullscreen></iframe>
+    </div>
 <div class="mypost">
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="name" placeholder="닉네임 입력">
