@@ -11,7 +11,7 @@
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet"/>
+<!--    <link href="css/styles.css" rel="stylesheet"/>-->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -29,82 +29,74 @@
     <script>
 
 
-         function age() {
-          const {chk1, chk2, chk3, chk4, chk5, chk6} = this
-          const list= []
 
-        if(chk1.checked == true) {
-          list.push('10')
-        }
-        if(chk2.checked == true) {
-          list.push('20')
-        }
-        if(chk3.checked == true) {
-          list.push('30')
-        }
-        if(chk4.checked == true) {
-          list.push('40')
-        }
-        if(chk5.checked == true) {
-          list.push('50')
-        }
-        if(chk6.checked == true) {
-          list.push('60')
-        }
-
-
-        return list
-      }
-
-
-
-
-
-
-
-
-            function created_at() {
-                let today = new Date();
-                let year = today.toLocaleString('en-US', {
-                    year: 'numeric',
-                });
-                let month = today.toLocaleString('en-US', {
-                    month: '2-digit',
-                });
-                let day = today.toLocaleString('en-US', {
-                    day: '2-digit',
-                });
-                let hour = today.getHours();
-                let minute = today.getMinutes();
-                let second = today.getSeconds();
-
-                return `${year}.${month}.${day} ${hour}:${minute}:${second}`
-            }
-        function submit (){
-            let word = $('#word').val()
-            let name = $('#name').val()
-            let img_url = $('#img_url').val()
-            let youtube_url = $('#youtube_url').val()
-            let desc = $('#desc').val()
-
-        $.ajax({
-                type: 'POST',
-                url: '/api/word',
-                data: {
-                    word_give: word,
-                    name_give: name,
-                    img_url_give: img_url,
-                    youtube_url_give: youtube_url,
-                    desc_give: desc,
-                    created_at_give: created_at(),
-                    age_tag_give : age()
-                },
-                success: function (response) {
-                    alert(response['msg'])
-                    window.location.reload()
-                }
+        function created_at() {
+            let today = new Date();
+            let year = today.toLocaleString('en-US', {
+                year: 'numeric',
             });
+            let month = today.toLocaleString('en-US', {
+                month: '2-digit',
+            });
+            let day = today.toLocaleString('en-US', {
+                day: '2-digit',
+            });
+            let hour = today.getHours();
+            let minute = today.getMinutes();
+            let second = today.getSeconds();
+
+            return `${year}.${month}.${day} ${hour}:${minute}:${second}`
         }
+        function submit() {
+          let word = $('#word').val()
+          let name = $('#name').val()
+          let img_url = $('#img_url').val()
+          let youtube_url = $('#youtube_url').val()
+          let desc = $('#desc').val()
+          let list = []
+
+          if ($('#chk1').prop('checked')) {
+            list.push(10)
+          }
+          if ($('#chk2').prop('checked')) {
+            list.push(20)
+          }
+          if ($('#chk3').prop('checked')) {
+            list.push(30)
+          }
+          if ($('#chk4').prop('checked')) {
+            list.push(40)
+          }
+          if ($('#chk5').prop('checked')) {
+            list.push(50)
+          }
+          if ($('#chk6').prop('checked')) {
+            list.push(60)
+          }
+
+          let age = list
+
+          console.log(word, name, img_url, youtube_url, desc, age)
+          $.ajax({
+            type: 'POST',
+            url: '/word',
+            data: {
+              word_give: word,
+              name_give: name,
+              img_url_give: img_url,
+              youtube_url_give: youtube_url,
+              desc_give: desc,
+              created_at_give: created_at(),
+              age_tag_give: JSON.stringify(age)
+            },
+
+            success: function (response) {
+              alert(response['msg'])
+              window.location.reload()
+            }
+          });
+        }
+
     </script>
 </head>
 <body>
