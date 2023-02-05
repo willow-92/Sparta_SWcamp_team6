@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      #tag_button {
+        float: left;
+        width: 100px;
+        height: 50px;
+        background-color: #ccc;
+        border-radius: 20px;
+
+        box-shadow: 3px 3px 3px black;
+
+        transition-duration: 0.3s;
+      }
+
+      #tag_button:active{
+        margin-left: 5px;
+        margin-top: 5px;
+        box-shadow: none
+      }
+
+    </style>
+<script>
+    $(document).ready(function(){
+        show_reply()
+    });
+    function save_word() {
+        let name = $('#name').val()
+        let comment = $('#comment').val()
+
+        function created_at() {
+            let today = new Date();
+            let year = today.toLocaleString('en-US', {
+                year: 'numeric',
+            });
+            let month = today.toLocaleString('en-US', {
+                month: '2-digit',
+            });
+            let day = today.toLocaleString('en-US', {
+                day: '2-digit',
+            });
+            let hour = today.getHours();
+            let minute = today.getMinutes();
+
+            return `${year}.${month}.${day} ${hour}:${minute}`
+        }
+        $.ajax({
+            type: 'POST',
+            url: '/detail',
+            data: { name_give: name,
+                comment_give: comment,
+                posttime_give: post_time()},
+            success: function (response) {
+                alert(response['msg'])
+                window.location.reload()
+            }
+        });
+    }
+    function show_reply() {
+        $.ajax({
+            type: "GET",
+            url: "/detail",
+            data: {},
+            success: function (response) {
+                let rows = response['replys']
+                for (let i = 0; i < rows.length; i++) {
+                    let name = rows[i]['name']
+                    let comment = rows[i]['comment']
+                    let posttime = rows[i]['posttime']
+
+                    let temp_html = `<div class="card">
+                                            <div class="card-body">
+                                                <blockquote class="blockquote mb-0">
+                                                    <p>${comment}</p>
+                                                    <footer class="blockquote-footer">${name} ${posttime}</footer>
+                                                </blockquote>
+                                            </div>
+                                        </div>`
+
+                    $('#comment-list').append(temp_html)
+                }
+            }
+        })
+    }
+</script>
+    </head>
+<body>
+<input type="text" class="form-control" id="word" placeholder="신조어 입력">
+<input type="text" class="form-control" id="name" placeholder="닉네임 입력">
+<input type="text" class="form-control" id="img_url" placeholder="이미지 URL 입력">
+<input type="text" class="form-control" id="youtube_url" placeholder="유튜브 URL 입력">
+<input type="text" class="form-control" id="desc" placeholder="설명 입력" style="height: 100px">
+<div class="tag_container">
+  <button id="tag_button">10대</button>
+</div>
+<button onclick="save_word()" type="button" class="btn btn-dark">댓글 남기기</button>
+
+<div class="mycards" id="comment-list">
+</div>
+</body>
+</html>
