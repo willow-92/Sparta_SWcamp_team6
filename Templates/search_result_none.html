@@ -2,328 +2,96 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>최신 신조어 백과사전, 어쩔사전! 어쩔사전</title>
+        <!-- Favicon-->
+        <link rel="icon" href="./../Src/img/favicon.ico"/>
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-
-    <title>어쩔사전</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            font-family: 'Gowun Dodum', sans-serif;
-        }
-
-        .NewWordCard {
-            padding: 10% 5% 5% 5%;
-        }
-
-
-        .card-title {
-            font-size: x-large;
-            font-weight: bolder;
-
-            padding: 10px 10px 0px 10px;
-        }
-
-        .chain_icon {
-            width: 20px;
-
-            float: right;
-        }
-
-        .card-text {
-            padding: 0 0 0px 10px;
-            line-height: 1.1em;
-        }
-
-        .btn-primary {
-            padding: 2px 10px 2px 10px;
-            margin: 0px 0px 0px 5px;
-        }
-
-
-
-    </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
+<style>
+    .contents_container {
+        padding-top: 130px;
 
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image_container{
+        padding-bottom: 10px;
+    }
+
+    .sejong_image {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+</style>
 <body>
-<!--네비게이션 바-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#!"><img src="./../Src/img/main_button.png"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">List</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">All Products</a></li>
-                        <li>
-                            <hr class="dropdown-divider"/>
-                        </li>
-                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div style="position: relative; top:-12px; right:10px;">
-                <label for="exampleDataList" class="form-label"></label>
-                <input class="form-control" list="datalistOptions" id="exampleDataList"
-                       placeholder="Search" style="width: 200px;">
-                <datalist id="datalistOptions">
-                    <option value="San Francisco">
-                    <option value="New York">
-                    <option value="Seattle">
-                    <option value="Los Angeles">
-                    <option value="Chicago">
-                </datalist>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a onclick="location.href='home'"><img src="./../Src/img/main_button.png"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-lg-2">
+                    <li class="nav-item"><a class="nav-link active" onclick="location.href='home'">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="location.href='list'">신조어 목록</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                                    href="../templates/shop.html">어쩔상점</a></li></button>
+                </ul>
             </div>
-            <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    이건 몰랐지?! 신조어 등록하기
-                </button>
-            </form>
         </div>
-    </div>
-</nav>
+    </nav>
+    <!-- Header-->
+    <header class="bg-home py-5">
+        <div class="container px-4 px-lg-5 my-4">
+            <div class="text-start text-white">
+                <h4 class="display-6 fw-bolder">‍오늘도 MZ말을 못 알아들었다😂<br>최신 신조어 백과사전, 어쩔사전!</h4>
+                <h6 style="line-height: 1.5em">신조어(新造語, Neologism)란? <br> 새로 만들어진 단어 및 용어 가운데 표준어로 등재되지 않은 말</h6></p>
+            </div>
 
-<div class="NewWordCard">
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
+            <div class="d-flex justify-content-center h-100">
+              <div class="searchbar shadow bg-body-tertiary rounded">
+                <input class="search_input" type="text" name="" placeholder="찾고 싶은 신조어를 검색해 보세요!">
+                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+              </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        잼민이<img class="chain_icon" src="./../Src/img/chain_icon.png">
-                    </div>
-                    <p class="card-text">2019년 하반기쯤 트위치에서 만들어진 신조어로, 좁게는 여러 곳에서 민폐를 끼치는 무개념 저연령층을 지칭하고, 넓게는 모든 저연령층을 통틀어
-                        지칭할 때 사용되는 용어다. 반대말로는 꼰대, 틀딱이 있다.</p>
-                    <button type="button" class="btn btn-primary">10대</button>
-                    <button type="button" class="btn btn-primary">20대</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
 
-</div>
+        </div>
+    </header>
+
+    <div class="contents_container">
+        <div class="image_container">
+        <img class="sejong_image" src="../Src/img/sejong_round.png">
+
+    </div>
+        <div class="alert">
+        <h4 class="display-6 fw-bolder">아직 등록되지 않았습니다.<br>새로 등록해보세요!</h4>
+
+    </div>
+        <div class="button_container">
+        <button type="button" class="btn btn-primary btn-lg" onclick="location.href='word_register.html'" style="">
+            신조어 등록하러 가보자GO!
+                  </button>
+        </button>
+    </div>
+    </div>
+
+
+
 
 
 </body>
