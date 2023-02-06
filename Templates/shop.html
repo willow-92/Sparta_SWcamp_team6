@@ -12,37 +12,11 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
     <script>
-      function open_shop(){
-          alert('곧 신조어 굿즈샵이 오픈됩니다! 존버는 승리한다!')
-      }
+        window.onload = function() {
+        alert("2월 10일 어쩔상점 오픈! 존버는 승리한다!");
+        };
     </script>
-    <!--<script>
-        $(document).ready(function () {
-            show_reply()
-        });
-
-        function save_comment() {
-            let name = $('#name').val()
-            let comment = $('#comment').val()
-
-            function post_time() {
-                let today = new Date();
-                let year = today.toLocaleString('en-US', {
-                    year: 'numeric',
-                });
-                let month = today.toLocaleString('en-US', {
-                    month: '2-digit',
-                });
-                let day = today.toLocaleString('en-US', {
-                    day: '2-digit',
-                });
-                let hour = today.getHours();
-                let minute = today.getMinutes();
-
-                return `${year}.${month}.${day} ${hour}:${minute}`
-            }
-
-            $.ajax({
+            <!--$.ajax({
                 type: 'POST',
                 url: '/detail',
                 data: {
@@ -116,7 +90,7 @@
                 <li class="nav-item"><a class="nav-link active" onclick="location.href='home'">Home</a></li>
                 <li class="nav-item"><a class="nav-link"
                                         href="../templates/상세_index.html">신조어 목록</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!" onclick="open_shop()">어쩔상점</a></li></ul>
+                <li class="nav-item"><a class="nav-link" href="#!">어쩔상점</a></li></ul>
             </ul>
         </div>
     </div>
