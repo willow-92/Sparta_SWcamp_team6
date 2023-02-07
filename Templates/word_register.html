@@ -78,7 +78,6 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-
         }
 
 
@@ -138,14 +137,14 @@
 
     <p></p>
     <div class="row g-3">
-        <div class="col-auto">
+        <div class="col-sm-2">
             <label for="newword">신조어명<span style="color:red">*</span></label>
         </div>
-        <div class="col-auto">
+        <div class="col-sm-2">
             <input type="text" id="inputNewword" class="form-control" aria-describedby="NewwordHelpInline"check_result="fail" required/>
             <span id="NewwordHelpInline" style="display: none;" class="form-text">⚠️앗!이미 등록된 신조어가 있다네요!? </span>
         </div>
-        <div class="col-auto">
+        <div class="col-sm-2">
             <button type="button" class="btn btn-primary mb-3" onclick="Nword_overlap_check()">중복확인</button>
         </div>
     </div>
@@ -154,14 +153,14 @@
 
 
     <div class="row g-3">
-        <div class="col-auto">
+        <div class="col-sm-2">
             <label for="newword">닉네임<span style="color:red">*</span></label>
         </div>
-        <div class="col-auto">
+        <div class="col-sm-2">
             <input type="text" id="inputNewword" class="form-control" aria-describedby="NewwordHelpInline"check_result="fail" required/>
             <span id="NewwordHelpInline" style="display: none;" class="form-text">⚠️이미 등록된 닉네임인데,더 독창적인 닉네임을 생각해볼까요? </span>
         </div>
-        <div class="col-auto">
+        <div class="col-sm-2">
             <button type="button" class="btn btn-primary mb-3" onclick="Nword_overlap_check()">중복확인</button>
         </div>
     </div>
@@ -170,23 +169,22 @@
 
 
     <div class="row g-3">
-        <div class="col-auto">
+        <div class="col-sm-2">
             <label for="ImageURL">관련 이미지 URL</label>
         </div>
-        <div class="col-auto">
-            <input style="width:400px" type="image" class="form-control" name="ImageURL" check_result="fail" required/><br><br>
+        <div class="col-sm-2">
+            <input style="width:400px" type="image" class="form-control" name="ImageURL" check_result="fail" required/>
         </div>
     </div>
-     <p></p>
-
+    <p></p>
 
 
     <div class="row g-3">
-        <div class="col-auto">
+        <div class="col-sm-2">
             <label for="youTubeURL">Youtube URL</label>
         </div>
-        <div class="col-auto">
-            <input style="background-color:white; color:black;width:500px;" =  type="text" class="form-control" name="youTubeURL"check_result="fail" required/>
+        <div class="col-sm-2">
+            <input style="background-color:white; color:black;width:500px;" =  type="url" class="form-control" name="youTubeURL"check_result="fail" required/>
         </div>
     </div>
     <p></p>
@@ -194,24 +192,38 @@
 
 
     <div class="row g-3">
-            <div class="col-auto">
+            <div class="col-sm-2">
                 <label for="descrip">설명<span style="color:red">*</span></label>
             </div>
-            <div class="col-auto">
+            <div class="col-sm-2">
                 <input style="background-color:white; color:black;padding:20px;width:800px;height:400px;" =  type="text" class="form-control" name="descrip" check_result="fail" required/>
             </div>
-        </div>
-
+    </div>
+    <p></p>
 
 
 <br><br>
     <div class="row g-3">
-    <label for="UseAge">신조어 사용 연령층</label><br>
-    <br><br>
+        <div class="col-sm-2">
+            <label for="UseAge">신조어 사용 연령층<span style="color:red">*</span></label><br>
+        </div>
+        <div class="col-sm-10">
+            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">10대</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">20대</button>
+            <button type="button" class="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">30대</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">40대</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">50대</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">60대~</button>
 
-    <input type="submit" value="Submit">
-    <input type="reset">
+        </div>
+    <br><br>
+    <p></p>
+
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-primary" type="button" onclick="">🤩 등록하기</button>
     </div>
+
+</div>
 
 
 </body>
