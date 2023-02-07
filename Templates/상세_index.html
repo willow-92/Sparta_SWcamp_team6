@@ -117,6 +117,7 @@
 
         .mybtns2 > button {
             margin: 10px;
+            height: 100px;
         }
 
         .mybtns > button {
@@ -194,6 +195,30 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="mybtns2">
+    <button type = "button" class="btn-primary"></button>
+    <button onclick="like()">Like</button>
+  <p id="likeCounter">Likes: 0</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    let count = 0;
+
+    function like() {
+      count++;
+      document.getElementById("likeCounter").innerHTML = "Likes: " + count;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="like()">Like</button>
+  <p id="likeCounter">Likes: 0</p>
+</body>
+</html>
+
 </div>
 
 <div class="mypost">
