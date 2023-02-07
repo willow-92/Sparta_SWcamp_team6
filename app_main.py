@@ -9,15 +9,17 @@ db = client.dbsparta
 
 @app.route('/')
 def home():
-   return render_template('index.html')
+   return render_template('')
 
 
 @app.route("/word", methods=["GET"])
 def word_get():
-    word_list = list(db.register.find())
-    print(word_list)
-    return render_template('index.html')
+    word_list = list(db.register.find({'name':'날슝이'},{'_id':False}))
+    count = db.register.count_documents({})
+    print(count)
+    return jsonify({'word':word_list})
+
 
 
 if __name__ == '__main__':
-   app.run('0.0.0.0', port=5000, debug=True)
+   app.run('0.0.0.0', port=9999, debug=True)
