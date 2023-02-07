@@ -1,5 +1,6 @@
 # flask 서버 구동
 from flask import Flask, render_template, request, jsonify
+
 app = Flask(__name__)
 
 # mongo db
@@ -19,7 +20,18 @@ def home():
 def list():
     return render_template('list.html')
 
-@app.route("/detail", methods=["POST"])
+@app.route('/detail')
+def detail():
+    return render_template('상세_index.html')
+@app.route('/shop')
+def shop():
+    return render_template('shop.html')
+
+@app.route('/register')
+def register():
+    return render_template('word_register.html')
+
+@app.route("/reply", methods=["POST"])
 def reply_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
@@ -34,7 +46,7 @@ def reply_post():
 
     return jsonify({'msg': '작성 완료!'})
 
-@app.route("/detail", methods=["GET"])
+@app.route("/reply", methods=["GET"])
 def reply_get():
     reply_list = list(db.replys.find({}, {'_id': False}))
     return jsonify({'replys': reply_list})
