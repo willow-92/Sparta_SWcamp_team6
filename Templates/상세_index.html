@@ -78,7 +78,9 @@
                 }
             })
         }
+
     </script>
+
     <title>어쩔사전</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -118,8 +120,11 @@
         }
 
         .mybtns2 > button {
-            margin: 10px;
-            height: 100px;
+            position: relative;
+            bottom: -470px;
+            height: 30px;
+            width: 200px;
+            right: -200px;
         }
 
         .mybtns > button {
@@ -161,7 +166,7 @@
             <ul class="navbar-nav ms-lg-2">
                 <li class="nav-item"><a class="nav-link active" onclick="location.href='home'">Home</a></li>
                 <li class="nav-item"><a class="nav-link" onclick="location.href='list'">신조어 목록</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="location.href='shop'">어쩔상점</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="href='shop.html'">어쩔상점</a></li>
                 <!--<li class="nav-item"><a class="nav-link" href="#!">어쩔상점</a></li>-->
             </ul>
         </div>
@@ -198,27 +203,16 @@
 </div>
 
 <div class="mybtns2">
-    <button type = "button" class="btn-primary"></button>
-    <button onclick="like()">Like</button>
-  <p id="likeCounter">Likes: 0</p>
-<!DOCTYPE html>
-<html>
-<head>
-  <script>
+    <button type = "button" onclick="like()" class="btn-primary"><p id="likeCounter">♥유익했어요: 0</p></button>
+    <!--<p id="likeCounter">Likes: 0</p>-->
+    <script>
     let count = 0;
 
     function like() {
       count++;
-      document.getElementById("likeCounter").innerHTML = "Likes: " + count;
+      document.getElementById("likeCounter").innerHTML = "♥유익했어요: " + count;
     }
   </script>
-</head>
-<body>
-  <button onclick="like()">Like</button>
-  <p id="likeCounter">Likes: 0</p>
-</body>
-</html>
-
 </div>
 
 <div class="mypost">
