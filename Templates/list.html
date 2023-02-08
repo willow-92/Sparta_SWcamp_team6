@@ -24,7 +24,7 @@
         }
 
         .button_container {
-            padding: 5% 5% 30px 5%;
+            padding: 1% 10px 3%;
         }
 
         .card-container {
@@ -39,8 +39,6 @@
         .card-title {
             font-size: xx-large;
             font-weight: bolder;
-
-
             padding: 10px 10px 10px 0px;
         }
 
@@ -57,17 +55,62 @@
             padding-bottom: 10px;
         }
 
-        .btn-primary {
-            padding: 2px 10px 2px 10px;
-            margin: 0px 0px 0px 5px;
-        }
 
         .in-card-button {
             float: right;
         }
 
+        .img-container {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
 
     </style>
+
+    <script>
+        $(document).ready(function () {
+            list_filter();
+        });
+
+        function list_filter() {
+            $.ajax({
+                type: 'GET',
+                url: '/read',
+                data: {},
+                success: function (response) {
+                    let rows = response['words'];
+                    for (let i = 0; i < rows.length; i++) {
+                        let word = rows[i]['word'];
+                        let img_url = rows[i]['img_url'];
+                        let desc = rows[i]['desc_url'];
+                        let age_tag = rows[i]['age_tag'];
+
+                        let temp_html = `<div class="mb-5">
+                                                    <div class="list-card-wrap shadow card" onclick="location.href='detail'">
+                                                                <div class="card-body p-4">
+                                                                    <img class="img-container" src="${img_url}" alt="">
+                                                                    <h3 class="fw-bolder">${word}</h3><p></p>
+                                                                    <h5 class=" fw-bolder">${desc}</h5>
+                                                                    <div class="in-card-button">
+                                                                        <button type="button" class="btn btn-primary">${age_tag}</button>
+                                                                    </div>
+                                                                </div>
+                                                    </div>
+                                          </div>`
+
+                        $('#cards_list').append(temp_html)
+                    }
+                }
+            });
+        }
+
+
+    </script>
+
+
+
 </head>
 <!--네비게이션 바-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -120,12 +163,19 @@
     </div>
 </header>
 <body>
-<div class="button_container">
-    <button type="button" class="btn btn-primary">가나다순</button>
-    <button type="button" class="btn btn-primary">연령대순</button>
-</div>
 
-<div class="NewWordCard_listpage">
+<div class="container px-4 mb-5">
+    <div class="button_container" style="padding-top: 4rem">
+        <button type="button" class="btn btn-primary" style="height: 38px;">가나다순</button>
+        <button id="age_tags20" type="button" class="btn btn-outline-primary"> 20대</button>
+        <button id="age_tags30" type="button" class="btn btn-outline-primary"> 30대</button>
+        <button id="age_tags40" type="button" class="btn btn-outline-primary"> 40대</button>
+        <button id="age_tags50" type="button" class="btn btn-outline-primary"> 50대</button>
+        <button id="age_tags60" type="button" class="btn btn-outline-primary"> 60대</button>
+
+    </div>
+    <div id="cards_list" class="card-list row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4  justify-content-center">
+    <!--
     <div class=card-container>
         <div class="card mb-3" style="max-width: 50%; max-height: 25%;" onclick="location.href='detail'">
         <div class="row g-0">
@@ -346,9 +396,11 @@
         </div>
     </div>
     </div>
+    -->
 
- 
     <br>
+</div>
+
 </div>
 </body>
 
