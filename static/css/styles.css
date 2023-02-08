@@ -2760,7 +2760,7 @@ textarea.form-control-lg {
   z-index: 2;
 }
 .input-group .btn:focus {
-  z-index: 3;
+  z-index: 0;
 }
 
 .input-group-text {
@@ -4551,7 +4551,25 @@ textarea.form-control-lg {
   transition: .5s;
 }
 
+.list-card-wrap {
+  position: relative;
+  display: grid;
+  flex-direction: row;
+  min-width: 300px;
+  min-height: 800px;
+  word-wrap: break-word;
+  background-color: fff;
+  background-clip: border-box;
+  border: 1px solid #e1e1e1;
+  border-radius: 1.2rem;
+  align-items: center;
+  overflow: hidden;
+}
 
+.list-card-wrap:hover {
+  transform: scale(1.06);
+  transition: .5s;
+}
 
 .card > hr {
   margin-right: 0;

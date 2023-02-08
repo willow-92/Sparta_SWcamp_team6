@@ -27,13 +27,6 @@
             show_word();
         });
 
-
-        function currentDate() {
-
-            return
-        }
-
-
         function show_word() {
             $.ajax({
                 type: 'GET',
@@ -53,7 +46,6 @@
 
                    let currentDate = `${year}.${month}.${day}`
                    let rows = response['words'];
-                   console.log(rows);
                    for (let i = 0; i < rows.length; i++) {
                        let word = rows[i]['word'];
                        let id = rows[i]['_id'];
@@ -62,7 +54,6 @@
                            let temp_html = `<div class="col mb-5">
                                                     <!-- <a class="word-link" onclick="location.href='list.html/${id}'"> -->
                                                     <div class="card-wrap h-100 shadow">
-
                                                         <div class="card-body p-4">
                                                              <div class="text-center text-white">
                                                                 <h5 class="fw-bolder">${word}</h5>
