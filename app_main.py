@@ -13,7 +13,7 @@ def home():
 
 @app.route("/word", methods=["GET"])
 def word_get():
-    word_list = list(db.register.find({},{'_id':False}).sort("_id",-1) )
+    word_list = list(db.register.find({},{'_id':False}).sort("_id",-1))
     return jsonify({'words':word_list})
 
 
