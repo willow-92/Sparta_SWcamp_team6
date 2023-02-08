@@ -33,34 +33,58 @@
                 url: '/word',
                 data: {},
                 success: function (response) {
-                    let rows = response['words']
-                         for(let i = 0; i < rows.length; i++) {
-                                 let word = rows[i]['word']
-                         let temp_html = `<div class="col mb-5">
-                                                <a class="word-link" onclick="location.href='${list.html(word)}'">
-                                                <div class="card-wrap h-100 shadow">
-                                                    <!-- TODAY 버튼 노출
-                                                     <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                                                        TODAY
-                                                    </div> -->
-                                                    <div class="card-body p-4">
-                                                         <div class="text-center text-white">
-                                                            <h5 class="fw-bolder">${word}</h5>
+                   let today = new Date();
+                   let year = today.toLocaleString('en-US', {
+                        year: 'numeric',
+                   });
+                   let month = today.toLocaleString('en-US', {
+                        month: '2-digit',
+                   });
+                   let day = today.toLocaleString('en-US', {
+                        day: '2-digit',
+                   });
+
+                   let currentDate = `${year}.${month}.${day}`
+                   let rows = response['words'];
+                   for (let i = 0; i < rows.length; i++) {
+                       let word = rows[i]['word'];
+                       let id = rows[i]['_id'];
+                       let to = rows[i]['created_at'];
+                       if (to < currentDate) {
+                           let temp_html = `<div class="col mb-5">
+                                                    <!-- <a class="word-link" onclick="location.href='list.html/${id}'"> -->
+                                                    <div class="card-wrap h-100 shadow">
+                                                        <div class="card-body p-4">
+                                                             <div class="text-center text-white">
+                                                                <h5 class="fw-bolder">${word}</h5>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                </a>
-                                          </div>`
-
-                         $('#cards-box').append(temp_html)
-
-                    }
-
-
-
+                                              </div>`
+                            $('#cards-box').append(temp_html)
+                       }
+                       else {
+                            let temp_html = `<div class="col mb-5">
+                                                    <!-- <a class="word-link" onclick="location.href='list.html'"> -->
+                                                    <div class="card-wrap h-100 shadow">
+                                                        <div id="today_badge" val="TODAY 버튼 노출" class="badge bg-primary text-white position-absolute"
+                                                            style="top: 0.5rem; right: 0.5rem">TODAY
+                                                        </div>
+                                                        <div class="card-body p-4">
+                                                             <div class="text-center text-white">
+                                                                <h5 class="fw-bolder">${word}</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                              </div>`
+                            $('#cards-box').append(temp_html)
+                       }
+                     }
                 }
             });
         }
+
+
 
         $(document).ready(function () {
             show_count();
@@ -91,8 +115,8 @@
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-lg-2">
-                <li class="nav-item"><a class="nav-link active" onclick="location.href='home'">Home</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="location.href='list'">신조어 목록</a></li>
+                <li class="nav-item"><a class="nav-link active" onclick="location.href='index.html'">Home</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="location.href='list.html'">신조어 목록</a></li>
                 <li class="nav-item"><a class="nav-link" onclick="location.href='shop.html'">어쩔상점</a></li>
                 </button>
             </ul>
@@ -139,6 +163,7 @@
 
             <div id="cards-box" class="card-list row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4  justify-content-center"
                  style="margin-bottom: 20px">
+
 
             </div>
             <div class="more d-grid gap-4 col-4 mx-auto" style="margin-bottom: 100px; padding-top: 10px;">
