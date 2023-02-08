@@ -80,6 +80,39 @@
         }
 
     </script>
+<script>
+    $(document).ready(function ()) {
+        show.word();
+    });
+    function show_word() {
+        $.ajax({
+            type: 'GET'
+            url: '/word'
+            data: {},
+            success: function (response) {
+                let rows = response['words']
+                for (let i = 0; i < rows.length; i++) {
+                    let word = rows[i]['word']
+                    let temp_html = `<div class="col mb-5">
+                                          <a class="word-link" onclick="location.href='${list.html(word)}'">
+                                     <div class="card-wrap h-100 shadow">
+                                          <div class="card-body p-4">
+                                               <div class="text-center text-white">
+                                               <h5 class="fw-bolder">${word}</h5>
+                                     </div>
+                                     </div>
+                                     </div>
+                                     </a>
+                                     </div>`
+                    $('#cards-box').append(temp_html)
+                }
+            }
+        });
+    }
+</script>
+
+
+
 
     <title>어쩔사전</title>
 
@@ -203,14 +236,14 @@
 </div>
 
 <div class="mybtns2">
-    <button type = "button" onclick="like()" class="btn-primary"><p id="likeCounter">♥유익했어요: 0</p></button>
+    <button type = "button" onclick="like()" class="btn btn-light"><p id="likeCounter">💖 <b>유익했어요: 0</b></p></button>
     <!--<p id="likeCounter">Likes: 0</p>-->
     <script>
     let count = 0;
 
     function like() {
       count++;
-      document.getElementById("likeCounter").innerHTML = "♥유익했어요: " + count;
+      document.getElementById("likeCounter").innerHTML = "💖 <b>유익했어요:</b> " + count;
     }
   </script>
 </div>
