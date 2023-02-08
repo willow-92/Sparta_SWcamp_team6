@@ -13,7 +13,7 @@ def home():
 
 @app.route("/word", methods=["GET"])
 def word_get():
-    word_list = list(db.register.find({},{'_id':False}))
+    word_list = list(db.register.find({},{'_id':False}).sort("_id",-1))
     return jsonify({'words':word_list})
 
 
@@ -21,7 +21,6 @@ def word_get():
 def time_get():
     time_list = list(db.register.find({'created_at'}))
     return jsonify({'times':time_list})
-
 
 
 @app.route("/counting", methods=["GET"])
