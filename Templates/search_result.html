@@ -18,29 +18,84 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+    .contents_container {
+        padding-top: 130px;
+
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image_container{
+        padding-bottom: 10px;
+    }
+
+    .sejong_image {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+</style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script>
 
-        function get_word() {
-            let keyword = $("#search_input").val()
-            $.ajax({
-                type: "POST",
-                url: "/find",
-                data: {keyword_give: keyword},
-                success: function (response) {
-                    console.log(response['msg'])
-                }
-            });
-        }
+        // GPT가 짜준 코드
+        $(document).ready(function () {
+            function get_word() {
+                let keyword = $("#search_input").val();
+                console.log(keyword)
+                $.ajax({
+                    type: "POST",
+                    url: "/search",
+                    data: {query: keyword},
+
+                    success: function (response) {
+                        console.log(response)
+                        let results = response['key'];
+                        let word = results[0].word;
+                        console.log(results);
+                        console.log("검색결과: " + word);
+                        let temp_html = `<div class="col mb-5">
+                                                    <div class="card-wrap h-100 shadow">
+                                                        <div class="card-body p-4">
+                                                             <div class="text-center text-white">
+                                                                <h5 class="fw-bolder">${word}</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                              </div>`
+                        $('#cards-box').append(temp_html)
+
+                    }
+                });
+            }
+
+            $('.search_icon').click(get_word);
+        });
 
 
-
-        //     $(document).ready(function () {
-        //         show_result();
-        //     });
+        // 도움 받아서 서버 쪽으로 검색 결과 보내는 것을 성공한 코드
+        // $(document).ready(function () {
+        //     function get_word() {
+        //         let keyword = $("#search_input").val();
+        //         $.ajax({
+        //             type: "POST",
+        //             url: "/find",
+        //             data: {keyword_give: keyword},
+        //             success: function (response) {
+        //                 console.log(response['msg'])
+        //             }
+        //         });
+        //     }
         //
+        //     $('.search_icon').click(get_word);
+        // });
+
         //
         //
         //     function show_result() {
@@ -78,7 +133,6 @@
 
     </script>
 
-
 </head>
 
 <body>
@@ -109,19 +163,49 @@
 
         <div class="d-flex justify-content-center h-100">
             <div class="searchbar shadow bg-body-tertiary rounded">
-                <input class="search_input" type="text" name="search_input" placeholder="찾고 싶은 신조어를 검색해 보세요!">
-                <button class="search_icon" onclick="get_word()"><i class="fas fa-search"></i></button>
+                <input class="search_input" type="text" id="search_input" placeholder="찾고 싶은 신조어를 검색해 보세요!">
+                <button class="search_icon"><i class="fas fa-search"></i></button>
             </div>
         </div>
-
+    </div>
     </div>
 </header>
 
+<!-- Section-->
+<section class="NO-result">
+        <div class="contents_container">
+        <div class="image_container">
+        <img class="sejong_image" src="../static/img/sejong_round.png">
+
+    </div>
+        <div class="alert">
+        <h4 class="display-6 fw-bolder">아직 등록되지 않았습니다.<br>새로 등록해보세요!</h4>
+
+    </div>
+        <div class="button_container">
+        <button type="button" class="btn btn-primary btn-lg" onclick="location.href='word_register.html'" style="">
+            신조어 등록하러 가보자GO!
+                  </button>
+        </button>
+    </div>
+    </div>
+</section>
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-4">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+             id="card-box" style="margin-bottom: 20px">
+
+        </div>
+
+
+    </div>
+</section>
 
 </div>
 </section>
 
 
 </body>
+
 
 </html>
