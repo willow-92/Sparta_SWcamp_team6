@@ -28,7 +28,7 @@ def word_register_post():
         'nickname': nickname_receive,
         'img_url': img_url_receive,
         'youtube_url': youtube_url_receive,
-        'desc_url': desc_receive,
+        'desc': desc_receive,
         'age_tag': age_tag_receive
         # 'created_at': created_at_receive,
 
