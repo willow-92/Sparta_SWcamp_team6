@@ -18,6 +18,28 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+    .contents_container {
+        padding-top: 130px;
+
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image_container{
+        padding-bottom: 10px;
+    }
+
+    .sejong_image {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+</style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -37,7 +59,7 @@
                         let results = response['key'];
                         let word = results[0].word;
                         console.log(results);
-                        console.log(word);
+                        console.log("검색결과: " + word);
                         let temp_html = `<div class="col mb-5">
                                                     <div class="card-wrap h-100 shadow">
                                                         <div class="card-body p-4">
@@ -148,7 +170,26 @@
     </div>
     </div>
 </header>
+
 <!-- Section-->
+<section class="NO-result">
+        <div class="contents_container">
+        <div class="image_container">
+        <img class="sejong_image" src="../static/img/sejong_round.png">
+
+    </div>
+        <div class="alert">
+        <h4 class="display-6 fw-bolder">아직 등록되지 않았습니다.<br>새로 등록해보세요!</h4>
+
+    </div>
+        <div class="button_container">
+        <button type="button" class="btn btn-primary btn-lg" onclick="location.href='word_register.html'" style="">
+            신조어 등록하러 가보자GO!
+                  </button>
+        </button>
+    </div>
+    </div>
+</section>
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-4">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
