@@ -9,28 +9,29 @@ db = client.dbsparta
 
 @app.route('/')
 def main():
-    return render_template('temp_word_register.html')
+    return render_template('word_register.html')
 
 
-@app.route("/word", methods=["POST"])
-def desc_post():
-
-    word_receive = request.form['word_give']
-    name_receive = request.form['name_give']
+@app.route("/word_register", methods=["POST"])
+def word_register_post():
+    newword_receive = request.form['newword_give']
+    nickname_receive = request.form['nickname_give']
     img_url_receive = request.form['img_url_give']
     youtube_url_receive = request.form['youtube_url_give']
-    desc_url_receive = request.form['desc_give']
-    created_at_receive = request.form['created_at_give']
+    desc_receive = request.form['desc_give']
     age_tag_receive = request.form['age_tag_give']
+    # 이게 뭘까요? created_at_receive = request.form['created_at_give']
+
 
     doc = {
-        'word': word_receive,
-        'name': name_receive,
+        'newword': newword_receive,
+        'nickname': nickname_receive,
         'img_url': img_url_receive,
         'youtube_url': youtube_url_receive,
-        'desc_url': desc_url_receive,
-        'created_at': created_at_receive,
+        'desc_url': desc_receive,
         'age_tag': age_tag_receive
+        # 'created_at': created_at_receive,
+
     }
 
     db.register.insert_one(doc)
