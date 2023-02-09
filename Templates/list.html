@@ -75,10 +75,13 @@
 
     </style>
 
+
     <script>
         $(document).ready(function () {
             list_filter();
         });
+
+
 
         function list_filter() {
             $.ajax({
@@ -95,20 +98,29 @@
 
 
 
-                        let temp_html = `<div class="mb-4">
+                         let temp_html = `<div class="mb-4">
                                                     <div class="card2 shadow" style="width: 18rem; onclick="location.href='detail'">
                                                                     <img class="img-container" src="${img_url}" alt="">
                                                                     <div class="card-body" style="margin-bottom: 10px">
                                                                             <h5 class="fw-bolder">${word}</h5>
                                                                             <p class="headline-banner-row3">${desc}</p>
-                                                                            <a href="#" class="btn btn-primary">${age_tag}</a>
-                                                                    </div>
+                                                                            <div class="age-button-list">
+                                                                                <a href="#" id="btn-10" class="btn btn-primary btn-sm2" >10대</a>
+                                                                                <a href="#" id="btn-20" class="btn btn-primary btn-sm2">20대</a>
+                                                                                <a href="#" id="btn-30" class="btn btn-primary btn-sm2">30대</a>
+                                                                                <a href="#" id="btn-40" class="btn btn-primary btn-sm2">40대</a>
+                                                                                <a href="#" id="btn-50" class="btn btn-primary btn-sm2">50대</a>
+                                                                                <a href="#" id="btn-60" class="btn btn-primary btn-sm2">60대 이상</a>
+                                                                            </div>
 
+                                                                    </div>
                                                     </div>
                                           </div>`
 
                         $('#cards_list').append(temp_html)
-                    }
+
+                        }
+
                 }
             });
         }
