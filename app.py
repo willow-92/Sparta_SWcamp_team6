@@ -22,7 +22,7 @@ def list():
 
 @app.route('/detail')
 def detail():
-    return render_template('상세_index.html')
+    return render_template('word_detail.html')
 @app.route('/shop')
 def shop():
     return render_template('shop.html')

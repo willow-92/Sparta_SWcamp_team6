@@ -22,7 +22,18 @@ def time_get():
     time_list = list(db.register.find({'created_at'}))
     return jsonify({'times':time_list})
 
+@app.route("/word_detail", methods=["GET"])
+def word_detail():
+    return render_template('word_detail.html')
 
+@app.route("/word_detail_info", methods=["GET"])
+def word_get_detail():
+    word_detail = request.args.get("keyword")
+    print(word_detail)
+    # word_list = db.register.find_one({}, {'_id': False})
+    word_list = list(db.register.find({'word': word_detail}, {'_id': False}))
+    print(word_list)
+    return jsonify({'words': word_list})
 
 @app.route("/counting", methods=["GET"])
 def count_get():
