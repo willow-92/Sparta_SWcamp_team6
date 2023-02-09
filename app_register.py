@@ -14,8 +14,8 @@ def main():
 
 @app.route("/word_register", methods=["POST"])
 def word_register_post():
-    newword_receive = request.form['newword_give']
-    nickname_receive = request.form['nickname_give']
+    word_receive = request.form['word_give']
+    name_receive = request.form['name_give']
     img_url_receive = request.form['img_url_give']
     youtube_url_receive = request.form['youtube_url_give']
     desc_receive = request.form['desc_give']
@@ -24,8 +24,8 @@ def word_register_post():
 
 
     doc = {
-        'newword': newword_receive,
-        'nickname': nickname_receive,
+        'word': word_receive,
+        'name': name_receive,
         'img_url': img_url_receive,
         'youtube_url': youtube_url_receive,
         'desc': desc_receive,

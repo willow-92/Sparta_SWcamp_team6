@@ -16,8 +16,8 @@
     <script>
        #신조어 등록하기
        function posting() {
-           let newword = $('#newword').val()
-           let nickname = $('#nickname').val()
+           let word = $('#word').val()
+           let name = $('#name').val()
            let img_url = $('#img_url').val()
            let youtube_url = $('#youtube_url').val()
            let desc = $('#desc').val()
@@ -27,7 +27,7 @@
            $.ajax({
                type:'POST',
                url : '/word_register',
-               data : {newword_give: newword, nickname_give:nickname, img_url_give:img_url, youtube_url_give:youtube_url, desc_give:desc, age_tag_give:age_tag},
+               data : {word_give: word, name_give:name, img_url_give:img_url, youtube_url_give:youtube_url, desc_give:desc, age_tag_give:age_tag},
                success: function (response) {
                    alert(response['msg'])
                    window.location.reload()
