@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>어쩔사전 | 목록</title>
+    <title>어쩔상점</title>
     <!-- Favicon-->
     <link rel="icon" href="../static/img/favicon.ico"/>
     <!-- Bootstrap icons-->
@@ -28,49 +28,7 @@
         alert("2월 10일 어쩔상점 오픈! 존버는 승리한다!");
         };
     </script>
-            <!--$.ajax({
-                type: 'POST',
-                url: '/detail',
-                data: {
-                    name_give: name,
-                    comment_give: comment,
-                    posttime_give: post_time()
-                },
-                success: function (response) {
-                    alert(response['msg'])
-                    window.location.reload()
-                }
-            });
-        }
 
-        function show_reply() {
-            $.ajax({
-                type: "GET",
-                url: "/detail",
-                data: {},
-                success: function (response) {
-                    let rows = response['replys']
-                    for (let i = 0; i < rows.length; i++) {
-                        let name = rows[i]['name']
-                        let comment = rows[i]['comment']
-                        let posttime = rows[i]['posttime']
-
-                        let temp_html = `<div class="card">
-                                            <div class="card-body">
-                                                <blockquote class="blockquote mb-0">
-                                                    <p>${comment}</p>
-                                                    <footer class="blockquote-footer">${name} ${posttime}</footer>
-                                                </blockquote>
-                                            </div>
-                                        </div>`
-
-                        $('#comment-list').append(temp_html)
-                    }
-                }
-            })
-        }
-    </script>-->
-    <title>어쩔상점</title>
 
 </head>
 
