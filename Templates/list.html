@@ -94,10 +94,10 @@
                         let desc = rows[i]['desc_url'];
                         let age_tag = rows[i]['age_tag'];
 
-                        let temp_html = `<div class="mb-4">
-                                                    <div class="card2 shadow" style="width: 18rem; onclick="location.href='detail'">
-                                                                    <img class="img-container" src="${img_url}" alt="">
-                                                                    <div class="card-body" style="margin-bottom: 10px">
+                        let temp_html = `<div class="mb-4" onclick="location.href='/word_detail?keyword=${word}'">
+                                                    <div class="card2 shadow" style="width: 18rem; onclick="location.href='/word_detail?keyword=${word}'">
+                                                                    <img class="img-container" src="${img_url}" alt="" onclick="location.href='/word_detail?keyword=${word}'">
+                                                                    <div class="card-body" style="margin-bottom: 10px" onclick="location.href='/word_detail?keyword=${word}'">
                                                                             <h5 class="fw-bolder">${word}</h5>
                                                                             <p class="headline-banner-row3">${desc}</p>
                                                                             <div class="age-button-list">
@@ -150,7 +150,7 @@
             <form class="d-flex">
                 <div class="more d-grid gap-4 col-4 mx-auto" style="margin-bottom: 100px; padding-top: 10px;">
                 <button type="button" class="btn btn-primary btn-lg"
-                        onclick="location.href='word_register'">이건 몰랐지? 신조어 등록하기
+                        onclick="location.href='register'">이건 몰랐지? 신조어 등록하기
                 </button>
             </form>
         </div>

@@ -37,12 +37,12 @@
                          for(let i = 0; i < rows.length; i++) {
                                  let word = rows[i]['word']
                          let temp_html = `<div class="col mb-5">
-                                                <div class="card-wrap h-100 shadow">
+                                                <div class="card-wrap h-100 shadow" onclick="location.href='/word_detail?keyword=${word}'">
                                                     <!-- TODAY 버튼 노출
                                                      <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
                                                         TODAY
                                                     </div> -->
-                                                    <div class="card-body p-4" id=>
+                                                    <div class="card-body p-4" onclick="location.href='/word_detail?keyword=${word}'">
                                                          <div class="text-center text-white" onclick="location.href='/word_detail?keyword=${word}'">
                                                             <h5 class="fw-bolder">${word}</h5>
                                                         </div>
@@ -91,7 +91,7 @@
             <ul class="navbar-nav ms-lg-2">
                 <li class="nav-item"><a class="nav-link active" onclick="location.href='home'">Home</a></li>
                 <li class="nav-item"><a class="nav-link" onclick="location.href='list'">신조어 목록</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="location.href='shop.html'">어쩔상점</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="location.href='shop'">어쩔상점</a></li>
                 </button>
             </ul>
         </div>
