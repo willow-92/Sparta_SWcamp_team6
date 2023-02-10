@@ -81,12 +81,10 @@
             list_filter();
         });
 
-
-
         function list_filter() {
             $.ajax({
                 type: 'GET',
-                url: '/read',
+                url: '/word',
                 data: {},
                 success: function (response) {
                     let rows = response['words'];
@@ -96,12 +94,10 @@
                         let desc = rows[i]['desc_url'];
                         let age_tag = rows[i]['age_tag'];
 
-
-
-                         let temp_html = `<div class="mb-4">
-                                                    <div class="card2 shadow" style="width: 18rem; onclick="location.href='detail'">
-                                                                    <img class="img-container" src="${img_url}" alt="">
-                                                                    <div class="card-body" style="margin-bottom: 10px">
+                        let temp_html = `<div class="mb-4" onclick="location.href='/word_detail?keyword=${word}'">
+                                                    <div class="card2 shadow" style="width: 18rem; onclick="location.href='/word_detail?keyword=${word}'">
+                                                                    <img class="img-container" src="${img_url}" alt="" onclick="location.href='/word_detail?keyword=${word}'">
+                                                                    <div class="card-body" style="margin-bottom: 10px" onclick="location.href='/word_detail?keyword=${word}'">
                                                                             <h5 class="fw-bolder">${word}</h5>
                                                                             <p class="headline-banner-row3">${desc}</p>
                                                                             <div class="age-button-list">
@@ -126,6 +122,8 @@
         }
 
 
+
+
     </script>
 
 
@@ -148,18 +146,11 @@
                 <label for="exampleDataList" class="form-label"></label>
                 <input class="form-control" list="datalistOptions" id="exampleDataList"
                        placeholder="Search" style="width: 200px;">
-                <datalist id="datalistOptions">
-                    <option value="San Francisco">
-                    <option value="New York">
-                    <option value="Seattle">
-                    <option value="Los Angeles">
-                    <option value="Chicago">
-                </datalist>
             </div>
             <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit" onclick="location.href='register'">
-                    <i class="bi-cart-fill me-1"></i>
-                    이건 몰랐지?! 신조어 등록하기
+                <div class="more d-grid gap-4 col-4 mx-auto" style="margin-bottom: 100px; padding-top: 10px;">
+                <button type="button" class="btn btn-primary btn-lg"
+                        onclick="location.href='register'">이건 몰랐지? 신조어 등록하기
                 </button>
             </form>
         </div>
@@ -185,12 +176,8 @@
 
 <div class="container px-4 mb-5">
     <div class="button_container" style="padding-top: 4rem">
-        <button type="button" class="btn btn-primary" style="height: 38px;">가나다순</button>
-        <button id="age_tags20" type="button" class="btn btn-outline-primary"> 20대</button>
-        <button id="age_tags30" type="button" class="btn btn-outline-primary"> 30대</button>
-        <button id="age_tags40" type="button" class="btn btn-outline-primary"> 40대</button>
-        <button id="age_tags50" type="button" class="btn btn-outline-primary"> 50대</button>
-        <button id="age_tags60" type="button" class="btn btn-outline-primary"> 60대</button>
+        <button type="button" class="btn btn-primary sort-alphabet" style="height: 38px;" onclick="alphabet_filter()">가나다순</button>
+        <button type="button" class="btn btn-primary" style="height: 38px;" onclick="age()">연령대순</button>
 
     </div>
     <div id="cards_list" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4  justify-content-center">
