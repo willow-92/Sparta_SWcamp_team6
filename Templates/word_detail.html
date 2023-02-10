@@ -145,9 +145,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            font-family: 'Gowun Dodum', sans-serif;
-        }
 
         .mycards {
             position: absolute;
@@ -213,8 +210,7 @@
 
     </style>
 </head>
-
-</body>
+<!--네비게이션 바-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
         <a onclick="location.href='home'"><img src="../static/img/main_button.png"/></a>
@@ -225,30 +221,24 @@
             <ul class="navbar-nav ms-lg-2">
                 <li class="nav-item"><a class="nav-link active" onclick="location.href='home'">Home</a></li>
                 <li class="nav-item"><a class="nav-link" onclick="location.href='list'">신조어 목록</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="href='shop.html'">어쩔상점</a></li>
-                <!--<li class="nav-item"><a class="nav-link" href="#!">어쩔상점</a></li>-->
+                <li class="nav-item"><a class="nav-link" onclick="location.href='shop'">어쩔상점</a></li>
+                </button>
             </ul>
+            <div class="navbar-nav ms-lg-auto" style="position: relative;">
+                <label for="exampleDataList" class="form-label"></label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                       placeholder="Search" style="width: 200px; margin-right: 14px;">
+                <div class="button">
+                    <form class="d-flex">
+                        <button type="button" class="btn btn-primary" onclick="location.href='word_register'">이건 몰랐지?! 신조어 등록하기</button>
+                    </form>
+                </div>
+
+            </div>
         </div>
     </div>
-    <div style="position: relative; top:-12px; right:10px;">
-        <label for="exampleDataList" class="form-label"></label>
-        <input class="form-control" list="datalistOptions" id="exampleDataList"
-               placeholder="Search" style="width: 200px;">
-        <datalist id="datalistOptions">
-            <option value="잼민이">
-            <option value="짜짜박박">
-            <option value="중꺽마">
-            <option value="머선129">
-        </datalist>
-    </div>
-    <div class="button">
-        <form class="d-flex">
-            <button type="button" class="btn btn-primary" onclick="location.href='register'"><b>이건 몰랐지?!신조어 등록하기</b></button>
-        </form>
-    </div>
-    </div>
-    </div>
 </nav>
+</body>
 
 <div class="mycards">
     <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -289,7 +279,7 @@
     <div class="form-floating">
         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
                   style="height: 200px"></textarea>
-        <label for="floatingTextarea2"><label>
+        <label for="floatingTextarea2"></label>
     </div>
     <div style="position: relative; top:10px;">
         <h7><b>신조어 사용 연령층</b></h7>
