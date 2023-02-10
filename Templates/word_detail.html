@@ -127,14 +127,12 @@
                 temp_html = `<iframe src =${youtube_url} class="video" alt="..." top=10 width=450 height=250 frameborder=0 allowfullscreen>`
                 $('.video').append(temp_html)
 
-                for(let i = 0; i < rows.length; i++){
-                        let age_tag = rows[i]['age_tag']
-                        let temp_html = `<button type="button" class="btn btn-secondary">${age_tag}대</button>`
-                        $('.mybtns').append(temp_html)
+                temp_html = `<button type="button" class="btn btn-secondary">${age_tag}대</button>`
+                $('.mybtns').append(temp_html)
 
             }
-        }
-    })}
+        })
+    }
 </script>
 
 
@@ -243,7 +241,7 @@
     </div>
     <div class="button">
         <form class="d-flex">
-            <button type="button" class="btn btn-primary" onclick="location.href='register'"><b>이건 몰랐지?!신조어 등록하기</b></button>
+            <button type="button" class="btn btn-primary" onclick="location.href='word_register'"><b>이건 몰랐지?!신조어 등록하기</b></button>
         </form>
     </div>
     </div>
