@@ -32,15 +32,16 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: '/word_register',
+                    url: 'http://localhost:5000/word_register',
                     data: {
                         word_give: word,
                         name_give: name,
                         img_url_give: img_url,
                         youtube_url_give: youtube_url,
                         desc_url_give: desc_url,
-                        age_tag_give: age_tag
+                        age_tag_give: JSON.stringify(age_tag)
                     },
+                    dataType:"json",
 
                     success: function (response) {
                         alert(response['msg'])
