@@ -81,8 +81,6 @@
             list_filter();
         });
 
-
-
         function list_filter() {
             $.ajax({
                 type: 'GET',
@@ -96,9 +94,7 @@
                         let desc = rows[i]['desc_url'];
                         let age_tag = rows[i]['age_tag'];
 
-
-
-                         let temp_html = `<div class="mb-4">
+                        let temp_html = `<div class="mb-4">
                                                     <div class="card2 shadow" style="width: 18rem; onclick="location.href='detail'">
                                                                     <img class="img-container" src="${img_url}" alt="">
                                                                     <div class="card-body" style="margin-bottom: 10px">
@@ -124,6 +120,21 @@
                 }
             });
         }
+
+
+
+         $('.sort-alphabet').click(function(){
+                  let rows = response['words'];
+                  rows.sort(function(a, b) {   //정렬
+                      if (a.title < b.title) {
+                          return -1;
+                      }//글자 내림차순
+                      else {
+                          return 1;
+                      }
+                  }
+          });
+
 
 
     </script>
@@ -185,12 +196,8 @@
 
 <div class="container px-4 mb-5">
     <div class="button_container" style="padding-top: 4rem">
-        <button type="button" class="btn btn-primary" style="height: 38px;">가나다순</button>
-        <button id="age_tags20" type="button" class="btn btn-outline-primary"> 20대</button>
-        <button id="age_tags30" type="button" class="btn btn-outline-primary"> 30대</button>
-        <button id="age_tags40" type="button" class="btn btn-outline-primary"> 40대</button>
-        <button id="age_tags50" type="button" class="btn btn-outline-primary"> 50대</button>
-        <button id="age_tags60" type="button" class="btn btn-outline-primary"> 60대</button>
+        <button type="button" class="btn btn-primary sort-alphabet" style="height: 38px;" onclick="alphabet_filter()">가나다순</button>
+        <button type="button" class="btn btn-primary" style="height: 38px;" onclick="age()">연령대순</button>
 
     </div>
     <div id="cards_list" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4  justify-content-center">

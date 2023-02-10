@@ -18,9 +18,6 @@ def word_get():
     return jsonify({'words': word_list})
 
 
-
-
-
 @app.route("/counting", methods=["GET"])
 def count_get():
     db_count = db.register.count_documents({})
