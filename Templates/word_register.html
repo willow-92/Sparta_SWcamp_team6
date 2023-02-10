@@ -32,15 +32,16 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: '/word_register',
+                    url: 'http://localhost:5000/word_register',
                     data: {
                         word_give: word,
                         name_give: name,
                         img_url_give: img_url,
                         youtube_url_give: youtube_url,
                         desc_url_give: desc_url,
-                        age_tag_give: age_tag
+                        age_tag_give: JSON.stringify(age_tag)
                     },
+                    dataType:"json",
 
                     success: function (response) {
                         alert(response['msg'])
@@ -107,23 +108,41 @@
 <!--네비게이션 바-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" onclick="location.href='home'"><img src="../static/img/main_button.png"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand" href="#!"><img src="../static/img/main_button.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" onclick="location.href='home'">Home</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="location.href='list'">신조어 목록</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="location.href='shop'">어쩔상점</a></li></button>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">List</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">All Products</a></li>
+                        <li>
+                            <hr class="dropdown-divider"/>
+                        </li>
+                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                    </ul>
+                </li>
             </ul>
             <div style="position: relative; top:-12px; right:10px;">
                 <label for="exampleDataList" class="form-label"></label>
-                <input class="form-control" list="datalistOptions" id="exampleDataList"
-                       placeholder="Search" style="width: 200px;">
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Search"
+                       style="width: 200px;">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                </datalist>
             </div>
             <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit" onclick="location.href='register'">
+                <button class="btn btn-outline-dark" type="submit">
                     <i class="bi-cart-fill me-1"></i>
                     이건 몰랐지?! 신조어 등록하기
                 </button>
