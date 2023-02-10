@@ -18,7 +18,7 @@ def word_register_post():
     name_receive = request.form['name_give']
     img_url_receive = request.form['img_url_give']
     youtube_url_receive = request.form['youtube_url_give']
-    desc_receive = request.form['desc_give']
+    desc_url_receive = request.form['desc_url_give']
     age_tag_receive = request.form['age_tag_give']
     # 이게 뭘까요? created_at_receive = request.form['created_at_give']
 
@@ -28,7 +28,7 @@ def word_register_post():
         'name': name_receive,
         'img_url': img_url_receive,
         'youtube_url': youtube_url_receive,
-        'desc': desc_receive,
+        'desc_url': desc_url_receive,
         'age_tag': age_tag_receive
         # 'created_at': created_at_receive,
 
