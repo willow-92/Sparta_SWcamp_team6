@@ -258,14 +258,24 @@
 </div>
 
 <div class="mybtns2">
-    <button type = "button" onclick="like()" class="btn btn-light"><p id="likeCounter">💖 <b>유익했어요: 0</b></p></button>
-    <!--<p id="likeCounter">Likes: 0</p>-->
-    <script>
+  <button type="button" onclick="like()" class="btn btn-light">
+    <p id="likeCounter">💖 <b>유익했어요: 0</b></p>
+  </button>
+  <script>
     let count = 0;
+
+    if (localStorage.getItem("likeCount")) {
+      count = parseInt(localStorage.getItem("likeCount"));
+    }
+
+    document.getElementById("likeCounter").innerHTML =
+      "💖 <b>유익했어요:</b> " + count;
 
     function like() {
       count++;
-      document.getElementById("likeCounter").innerHTML = "💖 <b>유익했어요:</b> " + count;
+      document.getElementById("likeCounter").innerHTML =
+        "💖 <b>유익했어요:</b> " + count;
+      localStorage.setItem("likeCount", count);
     }
   </script>
 </div>
