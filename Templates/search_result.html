@@ -44,8 +44,6 @@
                         $('#no_result').empty()
 
 
-
-
                         if (results.length < 1) {
                             let temp_html = `
                                 <div className="contents_container" style="padding-top: 130px; text-align: center; display: flex; flex-direction: column; justify-content: center;>           align-items: center;">
@@ -66,23 +64,31 @@
                                 </div>`
 
                             $('#no_result').append(temp_html)
-                        }
-                        else {
+                        } else {
                             console.log(results[0]['word'])
-                            let found_word = results[0]['word'];
-                            console.log('found_word:', found_word)
+                            let word = results[0]['word'];
+                            console.log('found_word:', word)
                             let temp_html = `
-                            <div class="col mb-5">
-                                <div class="card-wrap h-100 shadow">
-                                    <div class="card-body p-4">
-                                        <div class="text-center text-white">
-                                            <h5 class="fw-bolder">${found_word}</h5>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="py-5">
+        <div class="container px-4 px-lg-5 mt-4">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+                 id="card-box" onclick="location.href='/word_detail?keyword=${word}' "style="margin-bottom: 20px">
+                <div class="col mb-5">
+                    <div class="card-wrap h-100 shadow">
+                        <div class="card-body p-4">
+                            <div class="text-center text-white">
+                                <h5 class="fw-bolder">${word}</h5>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
                         `
-                            $('#cards-box').append(temp_html)
+                            $('#yes_result').append(temp_html)
                         }
                     }
                 });
@@ -92,8 +98,6 @@
         });
 
     </script>
-
-
 
 
 </head>
@@ -135,21 +139,11 @@
 </header>
 
 <!-- Section-->
-<div id="no_result" class="No-result">
+<div id="no_result" class="no_result">
 
 </div>
-<section class="py-5">
-    <div class="container px-4 px-lg-5 mt-4">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
-             id="card-box" style="margin-bottom: 20px">
-        </div>
-
-
-    </div>
-</section>
-
+<div id="yes_result" class="yes_result">
 </div>
-</section>
 
 
 </body>
