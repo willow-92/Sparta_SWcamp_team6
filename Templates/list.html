@@ -86,7 +86,7 @@
         function list_filter() {
             $.ajax({
                 type: 'GET',
-                url: '/read',
+                url: '/word',
                 data: {},
                 success: function (response) {
                     let rows = response['words'];
@@ -148,13 +148,6 @@
                 <label for="exampleDataList" class="form-label"></label>
                 <input class="form-control" list="datalistOptions" id="exampleDataList"
                        placeholder="Search" style="width: 200px;">
-                <datalist id="datalistOptions">
-                    <option value="San Francisco">
-                    <option value="New York">
-                    <option value="Seattle">
-                    <option value="Los Angeles">
-                    <option value="Chicago">
-                </datalist>
             </div>
             <form class="d-flex">
                 <button class="btn btn-outline-dark" type="submit" onclick="location.href='register'">

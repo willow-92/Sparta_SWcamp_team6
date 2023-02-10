@@ -37,6 +37,13 @@ def word_register_post():
     db.register.insert_one(doc)
     return jsonify({'msg': '작성 완료!'})
 
+@app.route("/word", methods=["GET"])
+def desc_get():
+    word_list = list(db.register.find())
+    print(word_list)
+    return render_template('temp_word_register.html')
+
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
