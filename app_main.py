@@ -57,7 +57,7 @@ def count_get():
     db_count = db.register.count_documents({})
     return jsonify({'counts': db_count})
 
-@app.route('/')
+@app.route('/search')
 def search_result():
     return render_template('search_result.html')
 
