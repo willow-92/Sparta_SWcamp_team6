@@ -22,7 +22,7 @@ def lists():
 def shop():
     return render_template('shop.html')
 
-@app.route('/register')
+@app.route('/word_register')
 def register():
     return render_template('word_register.html')
 
