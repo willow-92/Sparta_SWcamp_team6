@@ -16,58 +16,12 @@
         alert("2월 10일 어쩔상점 오픈! 존버는 승리한다!");
         };
     </script>
-            <!--$.ajax({
-                type: 'POST',
-                url: '/detail',
-                data: {
-                    name_give: name,
-                    comment_give: comment,
-                    posttime_give: post_time()
-                },
-                success: function (response) {
-                    alert(response['msg'])
-                    window.location.reload()
-                }
-            });
-        }
-
-        function show_reply() {
-            $.ajax({
-                type: "GET",
-                url: "/detail",
-                data: {},
-                success: function (response) {
-                    let rows = response['replys']
-                    for (let i = 0; i < rows.length; i++) {
-                        let name = rows[i]['name']
-                        let comment = rows[i]['comment']
-                        let posttime = rows[i]['posttime']
-
-                        let temp_html = `<div class="card">
-                                            <div class="card-body">
-                                                <blockquote class="blockquote mb-0">
-                                                    <p>${comment}</p>
-                                                    <footer class="blockquote-footer">${name} ${posttime}</footer>
-                                                </blockquote>
-                                            </div>
-                                        </div>`
-
-                        $('#comment-list').append(temp_html)
-                    }
-                }
-            })
-        }
-    </script>-->
     <title>어쩔사전</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            font-family: 'Gowun Dodum', sans-serif;
-        }
-
-          .btn-primary {
+                  .btn-primary {
             width: 250px;
             margin-right: 120px;
         }
@@ -81,35 +35,30 @@
 </body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-        <a onclick="location.href='home'"><img src="../static/img/main_button.png"/></a>
+        <a class="navbar-brand" onclick="location.href='home'"><img src="../static/img/main_button.png"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-lg-2">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link active" onclick="location.href='home'">Home</a></li>
                 <li class="nav-item"><a class="nav-link" onclick="location.href='list'">신조어 목록</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="location.href='shop'">어쩔상점</a></li></ul>
+                <li class="nav-item"><a class="nav-link" onclick="location.href='shop'">어쩔상점</a></li></button>
             </ul>
+            <div style="position: relative; top:-12px; right:10px;">
+                <label for="exampleDataList" class="form-label"></label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                       placeholder="Search" style="width: 200px;">
+            </div>
+            <div class="button">
+                <form class="d-flex">
+                    <button type="button" class="btn btn-outline-dark" onclick="location.href='register'">
+                        <i class="bi-cart-fill me-1"></i>
+                        <b>이건 몰랐지?!신조어 등록하기</b>
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
-    <div style="position: relative; top:-12px; right:10px;">
-        <label for="exampleDataList" class="form-label"></label>
-        <input class="form-control" list="datalistOptions" id="exampleDataList"
-               placeholder="Search" style="width: 200px;">
-        <datalist id="datalistOptions">
-            <option value="잼민이">
-            <option value="짜짜박박">
-            <option value="중꺽마">
-            <option value="머선129">
-        </datalist>
-    </div>
-    <div class="button">
-        <form class="d-flex">
-            <button type="button" class="btn btn-primary"><b>이건 몰랐지?! 신조어 등록하기</b></button>
-        </form>
-    </div>
-    </div>
     </div>
 </nav>
 <div class = "shop-main">
@@ -118,109 +67,6 @@
     <p style ="font-size:230%;"><b>여러분만의 신조어 티셔츠를 만들어보세요!</b></p>
 </div>
 </div>
-<!--<div class="mycards">
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://w.namu.la/s/22e9641b0350909fd2c7b809bcc16df2a4c1b5ea7fa8ca404e3b818870606598cf8c361c1acc407804bd2ab18dcd7bd194944c4d4aae0e43c6f45108f49013e8fdf7aa9c5d655c1f75d8422651933a0c82942b4c548e9de4280b73767b67742f18afaf8448e74f2bd7afa2bdfc4c625f"
-                     class="card-img-top" alt="...">
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="mypost">
-    <div style="position: relative; top:-30px;">
-        <h7><b>작성자 :</b></h7>
-    </div>
-
-    <!--<script>
-             function elapsedTime(date) {
-                 const start = new Date(date);
-                 const end = new Date();
-
-                 const diff = (end - start) / 1000;
-
-                 const times = [
-                     {name: '년', milliSeconds: 60 * 60 * 24 * 365},
-                     {name: '개월', milliSeconds: 60 * 60 * 24 * 30},
-                     {name: '일', milliSeconds: 60 * 60 * 24},
-                     {name: '시간', milliSeconds: 60 * 60},
-                     {name: '분', milliSeconds: 60},
-                 ];
-
-                 for (const value of times) {
-                     const betweenTime = Math.floor(diff / value.milliSeconds);
-
-                     if (betweenTime > 0) {
-                         return `${betweenTime}${value.name} 전`;
-                     }
-                 }
-                 return '방금 전';
-             }
-
-             elapsedTime('2022-11-15');
-     </scrpit>
-
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">신조어</label>
-    </div>
-    <div style="position: relative; top:-5px;">
-        <h7><b>설명</b></h7>
-    </div>
-    <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                  style="height: 200px"></textarea>
-        <label for="floatingTextarea2">코멘트</label>
-    </div>
-    <div style="position: relative; top:10px;">
-        <h7><b>신조어 사용 연령층</b></h7>
-    </div>
-    <div class="mybtns">
-        <button type="button" class="btn btn-secondary">10대</button>
-        <button type="button" class="btn btn-secondary">20대</button>
-    </div>
-    <div class="video">
-        <iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="250" frameborder=0
-                allowfullscreen></iframe>
-    </div>
-    <!--<div class="mypost">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="name" placeholder="닉네임 입력">
-            <label for="floatingInput">닉네임</label>
-        </div>
-        <div class="form-floating">
-    <textarea class="form-control" placeholder="댓글을 작성해보세요" id="comment"
-              style="height: 100px"></textarea>
-            <label for="floatingTextarea2">댓글내용</label>
-        </div>
-        <button onclick="save_comment()" type="button" class="btn btn-dark">댓글 남기기</button>
-    </div>
-    <div class="mycards" id="comment-list">
-</div>
-
-<div class="mycomment">
-<div id="disqus_thread"></div>
-<script>
-   /**
-   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-   /*
-   var disqus_config = function () {
-   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-   };
-   */
-   (function() { // DON'T EDIT BELOW THIS LINE
-   var d = document, s = d.createElement('script');
-   s.src = 'https://eojjeolsajeon.disqus.com/embed.js';
-   s.setAttribute('data-timestamp', + new Date());
-   (d.head || d.body).appendChild(s);
-   })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>-->
 </body>
 
 </html>
