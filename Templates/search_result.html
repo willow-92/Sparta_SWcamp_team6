@@ -18,65 +18,74 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script>
+        $(document).ready(function () {
+            function get_word() {
+                let keyword = $("#search_input").val();
+                console.log(keyword)
+                $.ajax({
+                    type: "POST",
+                    url: "/search",
+                    data: {query: keyword},
 
-        function get_word() {
-            let keyword = $("#search_input").val()
-            $.ajax({
-                type: "POST",
-                url: "/find",
-                data: {keyword_give: keyword},
-                success: function (response) {
-                    console.log(response['msg'])
-                }
-            });
-        }
+                    success: function (response) {
+                        console.log(response)
+                        let results = response['key'];
+                        console.log(results.length)
 
 
+                        if (results.length < 1) {
+                            let temp_html = `
+                                <div className="contents_container" style="padding-top: 130px; text-align: center; display: flex; flex-direction: column; justify-content: center;>           align-items: center;">
+                                    <div className="image_container" style="padding-bottom: 10px">
+                                        <img className="sejong_image" src="../static/img/sejong_round.png" style="max-width: 200px; max-height: 200px>
 
-        //     $(document).ready(function () {
-        //         show_result();
-        //     });
-        //
-        //
-        //
-        //     function show_result() {
-        //         $.ajax({
-        //         type: 'GET',
-        //         url: '/find',
-        //         data: {},
-        //         success: function (response) {
-        //             let rows = response['result']['word']
-        //             for (let i = 0; i < rows.length; i++) {
-        //                 let word = rows[i]['word']
-        //                     console.log(word)
-        //                      let temp_html = `<div class="col mb-5">
-        //                                             <a class="word-link" onclick="location.href='${list.html(word)}'">
-        //                                             <div class="card-wrap h-100 shadow">
-        //                                                 <!-- TODAY 버튼 노출
-        //                                                  <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-        //                                                     TODAY
-        //                                                 </div> -->
-        //                                                 <div class="card-body p-4">
-        //                                                      <div class="text-center text-white">
-        //                                                         <h5 class="fw-bolder">${word}</h5>
-        //                                                     </div>
-        //                                                 </div>
-        //                                             </div>
-        //                                             </a>
-        //                                       </div>`
-        //
-        //                      $('#cards-box').append(temp_html)
-        //             }
-        //         }
-        //     });
-        // }
+                                    </div>
+                                    <div className="alert">
+                                        <h4 className="display-6 fw-bolder">아직 등록되지 않았습니다.<br>새로 등록해보세요!</h4>
 
+                                    </div>
+                                    <div className="button_container">
+                                        <button type="button" className="btn btn-primary btn-lg"
+                                                onClick="location.href='word_register.html'" style="">
+                                            신조어 등록하러 가보자GO!
+                                        </button>
+                                    </div>
+                                </div>`
+                            $('#no_result').append(temp_html)
+                        }
+                        else {
+                            console.log(results[0]['word'])
+                            let found_word = results[0]['word']
+                            console.log(found_word)
+                            let word = results[0]['word'];
+                            let temp_html = `
+                            <div class="col mb-5">
+                                <div class="card-wrap h-100 shadow">
+                                    <div class="card-body p-4">
+                                        <div class="text-center text-white">
+                                            <h5 class="fw-bolder">${found_word}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                            $('#cards-box').append(temp_html)
+                        }
+                    }
+                });
+            }
+
+            $('.search_icon').click(get_word);
+        });
 
     </script>
+
+
 
 
 </head>
@@ -109,19 +118,33 @@
 
         <div class="d-flex justify-content-center h-100">
             <div class="searchbar shadow bg-body-tertiary rounded">
-                <input class="search_input" type="text" name="search_input" placeholder="찾고 싶은 신조어를 검색해 보세요!">
-                <button class="search_icon" onclick="get_word()"><i class="fas fa-search"></i></button>
+                <input class="search_input" type="text" id="search_input" placeholder="찾고 싶은 신조어를 검색해 보세요!">
+                <button class="search_icon"><i class="fas fa-search"></i></button>
             </div>
         </div>
-
+    </div>
     </div>
 </header>
 
+<!-- Section-->
+<div id="no_result" class="No-result">
+
+</div>
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-4">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+             id="card-box" style="margin-bottom: 20px">
+        </div>
+
+
+    </div>
+</section>
 
 </div>
 </section>
 
 
 </body>
+
 
 </html>
