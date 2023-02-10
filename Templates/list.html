@@ -24,60 +24,49 @@
         crossorigin="anonymous"></script>
 
     <style>
-
-        .NewWordCard_listpage {
-            padding: 0px 5% 5% 5%;
-        }
-
         .button_container {
             padding: 0% 5% 3% 0%;
         }
-
+        .NewWordCard_listpage {
+            padding: 0px 5% 5% 5%;
+        }
+        .button_container {
+            padding: 0% 5% 3% 0%;
+        }
         .card-container {
             display: flex;
         }
-
         .card {
             padding: 10px 10px 10px 10px;
             margin: 10px 10px 10px 10px
         }
-
         .card-title {
             font-size: xx-large;
             font-weight: bolder;
             padding: 10px 10px 10px 0px;
         }
-
         .chain_icon {
             width: 20px;
-
             float: right;
         }
-
         .card-text {
             font-size: x-large;
             line-height: 1.1em;
-
             padding-bottom: 10px;
         }
-
 
         .in-card-button {
             float: right;
         }
-
         .img-container {
             max-width: 100%;
             height: 180px;
             object-fit: cover;
             align-content: center;
         }
-
         .desc-container {
             line-height: 1.2;
-
         }
-
 
     </style>
 
@@ -127,7 +116,80 @@
             });
         }
 
+        function refresh() {
+            window.location.reload()
+            $('.search_icon').click(refresh());
+        }
 
+        $(document).ready(function () {
+            function get_word() {
+                let keyword = $("#search_input").val();
+                console.log(keyword)
+                $.ajax({
+                    type: "POST",
+                    url: "/search",
+                    data: {query: keyword},
+
+                    success: function (response) {
+                        console.log(response)
+                        let results = response['key'];
+                        console.log(results.length)
+                        $('#no_result').empty()
+                        $('#yes_result').empty()
+
+
+                        if (results.length < 1) {
+                            let temp_html = `
+                                <div className="contents_container" style="padding-top: 130px; text-align: center; display: flex; flex-direction: column; justify-content: center;>           align-items: center;">
+                                    <div className="image_container" style="padding-bottom: 10px">
+                                        <img className="sejong_image" src="../static/img/sejong_round.png" style="max-width: 200px; max-height: 200px>
+
+                                    </div>
+                                    <div className="alert">
+                                        <h4 className="display-6 fw-bolder">아직 등록되지 않았습니다.<br>새로 등록해보세요!</h4>
+
+                                    </div>
+                                    <div className="button_container">
+                                        <button type="button" class="btn btn-primary"
+                                                onClick="location.href='word_register'">
+                                            신조어 등록하러 가보자GO!
+                                        </button>
+                                    </div>
+                                </div>`
+
+                            $('#no_result').append(temp_html)
+                        } else {
+                            console.log(results[0]['word'])
+                            let word = results[0]['word'];
+                            let img_url = results[0]['img_url'];
+                            let desc = results[0]['desc_url'];
+                            console.log('found_word:', word)
+                            let temp_html = `<div class="mb-5" style=" display:flex; flex-direction:column; justify-content: center; align-items: center;">
+                                                    <div class="card2 shadow" style="margin-top: 30px; max-width: 60%;" onclick="location.href='/word_detail?keyword=${word}'">
+                                                                    <img class="img-container" style="max-width: 100%; " src="${img_url}" alt="" onclick="location.href='/word_detail?keyword=${word}'">
+                                                                    <div class="card-body" style="margin-top: 10px;" onclick="location.href='/word_detail?keyword=${word}'">
+                                                                            <h5 class="fw-bolder">${word}</h5>
+                                                                            <p class="headline-banner-row3">${desc}</p>
+                                                                            <div class="age-button-list">
+                                                                                <a href="#" id="btn-10" class="btn-primary btn-sm2" >10대</a>
+                                                                                <a href="#" id="btn-20" class="btn-primary btn-sm2">20대</a>
+                                                                                <a href="#" id="btn-30" class="btn-primary btn-sm2">30대</a>
+                                                                                <a href="#" id="btn-40" class="btn-primary btn-sm2">40대</a>
+                                                                                <a href="#" id="btn-50" class="btn-primary btn-sm2">50대</a>
+                                                                                <a href="#" id="btn-60" class="btn-primary btn-sm2">60대 이상</a>
+                                                                            </div>
+
+                                                                    </div>
+                                                    </div>
+                                          </div>`
+                            $('#yes_result').append(temp_html)
+                        }
+                    }
+                });
+            }
+
+            $('.search_icon').click(get_word);
+        });
 
 
     </script>
@@ -138,15 +200,15 @@
 <!--네비게이션 바-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-        <a onclick="location.href='home'"><img src="../static/img/main_button.png"/></a>
+        <a type="button" onclick="location.href='home'"><img src="../static/img/main_button.png"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-lg-2">
-                <li class="nav-item"><a class="nav-link active" onclick="location.href='home'">Home</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="location.href='list'">신조어 목록</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="location.href='shop'">어쩔상점</a></li>
+                <li class="nav-item"><a class="nav-link active" type="button" onclick="location.href='home'">Home</a></li>
+                <li class="nav-item"><a class="nav-link" type="button" onclick="location.href='list'">신조어 목록</a></li>
+                <li class="nav-item"><a class="nav-link" type="button" onclick="location.href='shop'">어쩔상점</a></li>
                 </button>
             </ul>
             <div class="navbar-nav ms-lg-auto" style="position: relative;">
@@ -172,16 +234,20 @@
 
         <div class="d-flex justify-content-center h-100">
             <div class="searchbar shadow bg-body-tertiary rounded">
-                <input class="search_input" type="text" name="" placeholder="찾고 싶은 신조어를 검색해 보세요!">
-                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                <input class="search_input" type="text" id="search_input" placeholder="찾고 싶은 신조어를 검색해 보세요!">
+                <button class="search_icon"><i class="fas fa-search"></i></button>
             </div>
         </div>
     </div>
 </header>
+ <!-- Section-->
+    <div id="no_result" class="no_result">
 
+    </div>
+    <div id="yes_result" class="yes_result">
+    </div>
 
 <body>
-
 <div class="container px-4 mb-5">
     <div class="button_container" style="padding-top: 4rem">
         <button type="button" class="btn btn-primary sort-alphabet" style="height: 38px;" onclick="alphabet_filter()">가나다순</button>
