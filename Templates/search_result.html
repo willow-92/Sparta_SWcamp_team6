@@ -23,6 +23,11 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        function refresh() {
+            window.location.reload()
+            $('.search_icon').click(refresh());
+        }
+
         $(document).ready(function () {
             function get_word() {
                 let keyword = $("#search_input").val();
@@ -36,6 +41,9 @@
                         console.log(response)
                         let results = response['key'];
                         console.log(results.length)
+                        $('#no_result').empty()
+
+
 
 
                         if (results.length < 1) {
@@ -56,13 +64,13 @@
                                         </button>
                                     </div>
                                 </div>`
+
                             $('#no_result').append(temp_html)
                         }
                         else {
                             console.log(results[0]['word'])
-                            let found_word = results[0]['word']
-                            console.log(found_word)
-                            let word = results[0]['word'];
+                            let found_word = results[0]['word'];
+                            console.log('found_word:', found_word)
                             let temp_html = `
                             <div class="col mb-5">
                                 <div class="card-wrap h-100 shadow">
