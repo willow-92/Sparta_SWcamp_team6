@@ -118,13 +118,23 @@
                 temp_html = name
                 $('#creator').append(temp_html)
 
-                for age in age_tag:
-                  temp_html = `<button type="button" class="btn btn-secondary">${age}대</button>`
-                  #().append(temp_html)
+                temp_html = word
+                $('#floatingInput').append(word)
+
+                temp_html = desc_url
+                $('#floatingTextarea2').append(desc_url)
+
+                temp_html = `<iframe src =${youtube_url} class="video" alt="..." top=10 width=450 height=250 frameborder=0 allowfullscreen>`
+                $('.video').append(temp_html)
+
+                for(let i = 0; i < rows.length; i++){
+                        let age_tag = rows[i]['age_tag']
+                        let temp_html = `<button type="button" class="btn btn-secondary">${age_tag}대</button>`
+                        $('.mybtns').append(temp_html)
 
             }
-        })
-    }
+        }
+    })}
 </script>
 
 
@@ -187,13 +197,13 @@
 
         .video {
             position: absolute;
-            bottom: -250px;
+            bottom: -120px;
         }
 
         .mycomment {
             position: absolute;
             top: 90px;
-            left: 1000px;
+            left: 1110px;
             width: 50%;
             max-width: 400px;
             margin: 50px auto 0px auto;
@@ -266,10 +276,12 @@
     <div style="position: relative; top:-30px;">
         <h7><b>작성자 : </b></h7><span id="creator"></span>
     </div>
-
+    <div style="position: relative; top:-5px;">
+        <h7><b>신조어</b></h7>
+    </div>
     <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">신조어</label>
+        <textarea class="form-control" id="floatingInput" placeholder="name@example.com" type="email"></textarea>
+        <label for="floatingInput"></label>
     </div>
     <div style="position: relative; top:-5px;">
         <h7><b>설명</b></h7>
@@ -277,18 +289,18 @@
     <div class="form-floating">
         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
                   style="height: 200px"></textarea>
-        <label for="floatingTextarea2">코멘트</label>
+        <label for="floatingTextarea2"><label>
     </div>
     <div style="position: relative; top:10px;">
         <h7><b>신조어 사용 연령층</b></h7>
     </div>
     <div class="mybtns">
-        <button type="button" class="btn btn-secondary">10대</button>
-        <button type="button" class="btn btn-secondary">20대</button>
+        <!--<button type="button" class="btn btn-secondary">10대</button>
+        <button type="button" class="btn btn-secondary">20대</button>-->
     </div>
     <div class="video">
-        <iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="250" frameborder=0
-                allowfullscreen></iframe>
+        <!--<iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="250" frameborder=0
+                allowfullscreen></iframe>-->
     </div>
     <!--<div class="mypost">
         <div class="form-floating mb-3">
