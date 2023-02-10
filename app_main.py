@@ -51,6 +51,7 @@ def word_get_detail():
     print(word_list)
     return jsonify({'words': word_list})
 
+
 @app.route("/counting", methods=["GET"])
 def count_get():
     db_count = db.register.count_documents({})
@@ -73,7 +74,7 @@ def search():
     results = list(db.register.find({"word": {"$regex": str(query), "$options": "i"}}, {'_id': False}))
     return jsonify({'key': results})
 
-
+#단어 등록 DB에 보내기
 @app.route("/word_register", methods=["POST"])
 def word_register_post():
     word_receive = request.form['word_give']
@@ -83,7 +84,6 @@ def word_register_post():
     desc_url_receive = request.form['desc_url_give']
     age_tag_receive = request.form['age_tag_give']
     # 이게 뭘까요? created_at_receive = request.form['created_at_give']
-
 
     doc = {
         'word': word_receive,
