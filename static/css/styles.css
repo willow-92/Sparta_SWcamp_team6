@@ -4530,6 +4530,38 @@ textarea.form-control-lg {
   align-items: center;
 }
 
+.card2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  height: 400px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.5rem;
+  align-items: left;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+
+.list-card-wrap {
+  position: relative;
+  display: grid;
+  flex-direction: row;
+  min-width: 200px;
+
+  word-wrap: break-word;
+  background-color: fff;
+  background-clip: border-box;
+  border: 1px solid #e1e1e1;
+  border-radius: 1.2rem;
+  align-items: center;
+
+}
+
 
 .card-wrap {
   position: relative;
@@ -4555,8 +4587,8 @@ textarea.form-control-lg {
   position: relative;
   display: grid;
   flex-direction: row;
-  min-width: 300px;
-  min-height: 800px;
+  min-width: 200px;
+  min-height: 540px;
   word-wrap: break-word;
   background-color: fff;
   background-clip: border-box;
@@ -4564,6 +4596,7 @@ textarea.form-control-lg {
   border-radius: 1.2rem;
   align-items: center;
   overflow: hidden;
+  vertical-align: top;
 }
 
 .list-card-wrap:hover {
@@ -4574,6 +4607,7 @@ textarea.form-control-lg {
 .card > hr {
   margin-right: 0;
   margin-left: 0;
+
 }
 .card > .list-group {
   border-top: inherit;
@@ -4596,8 +4630,10 @@ textarea.form-control-lg {
 
 .card-body {
   flex: 1 0 auto;
-  padding: 1rem 1rem;
+  padding: 2rem 1.2rem;
 }
+
+
 
 .card-title {
   margin-bottom: 0.5rem;
@@ -7978,6 +8014,21 @@ textarea.form-control-lg {
 .headline-banner-row2 {
   font-weight:600;
   font-size : 0.8em;
+
+}
+
+.headline-banner-row3 {
+  font-weight:500;
+  font-size : 0.8em;
+  line-height : 1.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 3.4rem;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 1rem;
 
 }
 

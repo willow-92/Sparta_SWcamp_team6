@@ -24,7 +24,7 @@
         }
 
         .button_container {
-            padding: 1% 10px 3%;
+            padding: 0% 5% 3% 0%;
         }
 
         .card-container {
@@ -61,18 +61,27 @@
         }
 
         .img-container {
-            width: 300px;
-            height: 300px;
+            max-width: 100%;
+            height: 180px;
             object-fit: cover;
+            align-content: center;
+        }
+
+        .desc-container {
+            line-height: 1.2;
+
         }
 
 
     </style>
 
+
     <script>
         $(document).ready(function () {
             list_filter();
         });
+
+
 
         function list_filter() {
             $.ajax({
@@ -87,21 +96,31 @@
                         let desc = rows[i]['desc_url'];
                         let age_tag = rows[i]['age_tag'];
 
-                        let temp_html = `<div class="mb-5">
-                                                    <div class="list-card-wrap shadow card" onclick="location.href='detail'">
-                                                                <div class="card-body p-4">
+
+
+                         let temp_html = `<div class="mb-4">
+                                                    <div class="card2 shadow" style="width: 18rem; onclick="location.href='detail'">
                                                                     <img class="img-container" src="${img_url}" alt="">
-                                                                    <h3 class="fw-bolder">${word}</h3><p></p>
-                                                                    <h5 class=" fw-bolder">${desc}</h5>
-                                                                    <div class="in-card-button">
-                                                                        <button type="button" class="btn btn-primary">${age_tag}</button>
+                                                                    <div class="card-body" style="margin-bottom: 10px">
+                                                                            <h5 class="fw-bolder">${word}</h5>
+                                                                            <p class="headline-banner-row3">${desc}</p>
+                                                                            <div class="age-button-list">
+                                                                                <a href="#" id="btn-10" class="btn btn-primary btn-sm2" >10대</a>
+                                                                                <a href="#" id="btn-20" class="btn btn-primary btn-sm2">20대</a>
+                                                                                <a href="#" id="btn-30" class="btn btn-primary btn-sm2">30대</a>
+                                                                                <a href="#" id="btn-40" class="btn btn-primary btn-sm2">40대</a>
+                                                                                <a href="#" id="btn-50" class="btn btn-primary btn-sm2">50대</a>
+                                                                                <a href="#" id="btn-60" class="btn btn-primary btn-sm2">60대 이상</a>
+                                                                            </div>
+
                                                                     </div>
-                                                                </div>
                                                     </div>
                                           </div>`
 
                         $('#cards_list').append(temp_html)
-                    }
+
+                        }
+
                 }
             });
         }
@@ -174,7 +193,7 @@
         <button id="age_tags60" type="button" class="btn btn-outline-primary"> 60대</button>
 
     </div>
-    <div id="cards_list" class="card-list row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4  justify-content-center">
+    <div id="cards_list" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4  justify-content-center">
     <!--
     <div class=card-container>
         <div class="card mb-3" style="max-width: 50%; max-height: 25%;" onclick="location.href='detail'">
