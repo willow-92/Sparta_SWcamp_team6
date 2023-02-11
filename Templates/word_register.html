@@ -24,6 +24,7 @@
         crossorigin="anonymous"></script>
 
    <script>
+
             function created_at() {
                let today = new Date();
                let year = today.toLocaleString('en-US', {
@@ -215,8 +216,9 @@
             <label for="desc_url">설명<span style="color:red">*</span></label>
         </div>
         <div class="col-sm-2">
-            <input style="background-color:white; color:black;padding:20px;width:800px;height:400px;" id="desc_url"
-                   type="text" class="form-control" check_result="fail" required/>
+            <textarea style="background-color:white; color:black;padding:20px;width:800px;height:400px; white-space:pre;" id="desc_url"
+                   type="text" class="form-control"  check_result="fail">  </textarea>
+
         </div>
     </div>
     <p></p>
