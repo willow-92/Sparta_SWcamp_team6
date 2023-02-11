@@ -143,9 +143,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            font-family: 'Gowun Dodum', sans-serif;
-        }
 
         .mycards {
             position: absolute;
@@ -215,15 +212,15 @@
 </body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-        <a onclick="location.href='home'"><img src="../static/img/main_button.png"/></a>
+        <a type="button" onclick="location.href='home'"><img src="../static/img/main_button.png"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-lg-2">
-                <li class="nav-item"><a class="nav-link active" onclick="location.href='home'">Home</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="location.href='list'">신조어 목록</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="href='shop.html'">어쩔상점</a></li>
+                <li class="nav-item"><a class="nav-link active" type="button" onclick="location.href='home'">Home</a></li>
+                <li class="nav-item"><a class="nav-link" type="button" onclick="location.href='list'">신조어 목록</a></li>
+                <li class="nav-item"><a class="nav-link" type="button" onclick="href='shop.html'">어쩔상점</a></li>
                 <!--<li class="nav-item"><a class="nav-link" href="#!">어쩔상점</a></li>-->
             </ul>
         </div>
