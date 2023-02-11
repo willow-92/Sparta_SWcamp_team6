@@ -30,7 +30,7 @@ def word_register_post():
         'youtube_url': youtube_url_receive,
         'desc_url': desc_url_receive,
         'age_tag': age_tag_receive
-        # 'created_at': created_at_receive,
+        'created_at': created_at_receive,
 
     }
 

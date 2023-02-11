@@ -88,6 +88,7 @@
                         let img_url = rows[i]['img_url'];
                         let desc = rows[i]['desc_url'];
                         let age_tag = rows[i]['age_tag'];
+                        str = age_tag.replaceAll("\"", "");
 
                         let temp_html = `<div class="mb-5" style="padding-left: 12px; padding-right: 12px;" onclick="location.href='/word_detail?keyword=${word}'">
                                                     <div class="card2 shadow" onclick="location.href='/word_detail?keyword=${word}'">
@@ -96,12 +97,13 @@
                                                                             <h5 class="fw-bolder">${word}</h5>
                                                                             <p class="headline-banner-row3">${desc}</p>
                                                                             <div class="age-button-list">
-                                                                                <a href="#" id="btn-10" class="btn-primary btn-sm2" >10대</a>
+                                                                            <span class="btn-primary btn-sm2" >${str}</span>
+                                                                            <!--<a href="#" id="btn-10" class="btn-primary btn-sm2" >10대</a>
                                                                                 <a href="#" id="btn-20" class="btn-primary btn-sm2">20대</a>
                                                                                 <a href="#" id="btn-30" class="btn-primary btn-sm2">30대</a>
                                                                                 <a href="#" id="btn-40" class="btn-primary btn-sm2">40대</a>
                                                                                 <a href="#" id="btn-50" class="btn-primary btn-sm2">50대</a>
-                                                                                <a href="#" id="btn-60" class="btn-primary btn-sm2">60대 이상</a>
+                                                                                <a href="#" id="btn-60" class="btn-primary btn-sm2">60대 이상</a>-->
                                                                             </div>
 
                                                                     </div>
@@ -163,6 +165,7 @@
                             let word = results[0]['word'];
                             let img_url = results[0]['img_url'];
                             let desc = results[0]['desc_url'];
+                            let age_tag = results[0]['age_tag'];
                             console.log('found_word:', word)
                             let temp_html = `<div class="mb-5" style=" display:flex; flex-direction:column; justify-content: center; align-items: center;">
                                                     <div class="card2 shadow" style="margin-top: 30px; max-width: 60%;" onclick="location.href='/word_detail?keyword=${word}'">
@@ -171,12 +174,12 @@
                                                                             <h5 class="fw-bolder">${word}</h5>
                                                                             <p class="headline-banner-row3">${desc}</p>
                                                                             <div class="age-button-list">
-                                                                                <a href="#" id="btn-10" class="btn-primary btn-sm2" >10대</a>
-                                                                                <a href="#" id="btn-20" class="btn-primary btn-sm2">20대</a>
+                                                                                <span class="btn-primary btn-sm2" >${age_tag}</span>
+                                                                                <!--<a href="#" id="btn-20" class="btn-primary btn-sm2">20대</a>
                                                                                 <a href="#" id="btn-30" class="btn-primary btn-sm2">30대</a>
                                                                                 <a href="#" id="btn-40" class="btn-primary btn-sm2">40대</a>
                                                                                 <a href="#" id="btn-50" class="btn-primary btn-sm2">50대</a>
-                                                                                <a href="#" id="btn-60" class="btn-primary btn-sm2">60대 이상</a>
+                                                                                <a href="#" id="btn-60" class="btn-primary btn-sm2">60대 이상</a>-->
                                                                             </div>
 
                                                                     </div>
@@ -212,9 +215,9 @@
                 </button>
             </ul>
             <div class="navbar-nav ms-lg-auto" style="position: relative;">
-                <label for="exampleDataList" class="form-label"></label>
+                <!--<label for="exampleDataList" class="form-label"></label>
                 <input class="form-control" list="datalistOptions" id="exampleDataList"
-                       placeholder="Search" style="width: 200px; margin-right: 14px;">
+                       placeholder="Search" style="width: 200px; margin-right: 14px;">-->
                 <div class="button">
                     <form class="d-flex">
                         <button type="button" class="btn btn-primary" onclick="location.href='word_register'">이건 몰랐지?! 신조어 등록하기</button>
