@@ -24,6 +24,23 @@
         crossorigin="anonymous"></script>
 
    <script>
+            function created_at() {
+               let today = new Date();
+               let year = today.toLocaleString('en-US', {
+                   year: 'numeric',
+               });
+               let month = today.toLocaleString('en-US', {
+                   month: '2-digit',
+               });
+               let day = today.toLocaleString('en-US', {
+                   day: '2-digit',
+               });
+               let hour = today.getHours();
+               let minute = today.getMinutes();
+               let second = today.getSeconds();
+
+               return `${year}.${month}.${day} ${hour}:${minute}:${second}`
+            }
 
             function posting() {
                 var word = $('#word').val()
@@ -35,7 +52,7 @@
 
                 $('.agebtn').each(function () {
                     if ($(this).hasClass("active")) {
-                        age_tag.push($(this).attr("id"));
+                        age_tag.push($(this).attr('id'));
                     }
                 });
 
@@ -49,6 +66,7 @@
                         img_url_give: img_url,
                         youtube_url_give: youtube_url,
                         desc_url_give: desc_url,
+                        created_at_give: created_at(),
                         age_tag_give: JSON.stringify(age_tag)
                     },
                     dataType:"json",
@@ -210,12 +228,12 @@
             <label for="age_tag">신조어 사용 연령층<span style="color:red">*</span></label><br>
         </div>
         <div class="col-sm-10" id="age_tag" style="margin-top: 10px;">
-            <button id=10 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">10대</button>
-            <button id=20 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">20대</button>
-            <button id=30 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">30대</button>
-            <button id=40 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">40대</button>
-            <button id=50 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">50대</button>
-            <button id=60 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">60대~</button>
+            <button id=10대 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">10대</button>
+            <button id=20대 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">20대</button>
+            <button id=30대 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">30대</button>
+            <button id=40대 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">40대</button>
+            <button id=50대 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">50대</button>
+            <button id=60대 type="button" class="btn btn-outline-primary agebtn" data-bs-toggle="button" autocomplete="off">60대~</button>
         </div>
     </div>
     <br><br>
