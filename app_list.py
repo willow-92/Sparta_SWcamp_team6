@@ -14,9 +14,8 @@ def home():
 
 @app.route("/read", methods=["GET"])
 def list_get():
-    word_list = list(db.register.find({},{'_id':False}).sort("_id",-1))
-    return jsonify({'words': word_list})
-
+    word_list = list(db.register.find({},{'_id':False})).sort("_id",-1)
+    return jsonify({'words':word_list})
 
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)

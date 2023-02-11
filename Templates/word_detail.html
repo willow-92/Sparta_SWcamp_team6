@@ -1,6 +1,5 @@
 <!doctype html>
 <body lang="en">
-# 건태님 덮어쓰기용
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -72,7 +71,6 @@
                                                 </blockquote>
                                             </div>
                                         </div>`
-
                         $('#comment-list').append(temp_html)
                     }
                 }
@@ -81,33 +79,59 @@
 
     </script>
 <script>
-    $(document).ready(function ()) {
-        show.word();
+    $(document).ready(function () {
+        show_word();
     });
+    function getParam(){
+        return decodeURI(location.search.substr(location.search.indexOf("=")+1));
+    }
+
     function show_word() {
+        let para = getParam()
         $.ajax({
-            type: 'GET'
-            url: '/word'
-            data: {},
+            type: 'GET',
+            url: '/word_detail_info',
+            data: {keyword: para},
             success: function (response) {
-                let rows = response['words']
-                for (let i = 0; i < rows.length; i++) {
-                    let word = rows[i]['word']
-                    let temp_html = `<div class="col mb-5">
-                                          <a class="word-link" onclick="location.href='${list.html(word)}'">
-                                     <div class="card-wrap h-100 shadow">
-                                          <div class="card-body p-4">
-                                               <div class="text-center text-white">
-                                               <h5 class="fw-bolder">${word}</h5>
-                                     </div>
-                                     </div>
-                                     </div>
-                                     </a>
-                                     </div>`
-                    $('#cards-box').append(temp_html)
-                }
+                let rows = response['words'][0]
+
+                let age_tag = rows['age_tag']
+                let created_at = rows['created_at']
+                let desc_url = rows['desc_url']
+                let img_url = rows['img_url']
+                let name = rows['name']
+                let word = rows['word']
+                let youtube_url = rows['youtube_url']
+
+                let temp_html111 = `
+                    <h7><b>${age_tag} :</b></h7>
+                    <h7><b>${created_at} :</b></h7>
+                    <h7><b>${desc_url} :</b></h7>
+                    <h7><b>${img_url} :</b></h7>
+                    <h7><b>${name} :</b></h7>
+                    <h7><b>${word} :</b></h7>
+                    <h7><b>${youtube_url} :</b></h7>`
+
+                let temp_html = `<img src=${img_url} class="card-img-top" alt="...">`
+                $('.card').append(temp_html)
+
+                temp_html = name
+                $('#creator').append(temp_html)
+
+                temp_html = word
+                $('#floatingInput').append(word)
+
+                temp_html = desc_url
+                $('#floatingTextarea2').append(desc_url)
+
+                temp_html = `<iframe src =${youtube_url} class="video" alt="..." top=10 width=450 height=250 frameborder=0 allowfullscreen>`
+                $('.video').append(temp_html)
+
+                temp_html = `<button type="button" class="btn btn-secondary">${age_tag}대</button>`
+                $('.mybtns').append(temp_html)
+
             }
-        });
+        })
     }
 </script>
 
@@ -171,13 +195,13 @@
 
         .video {
             position: absolute;
-            bottom: -250px;
+            bottom: -120px;
         }
 
         .mycomment {
             position: absolute;
             top: 90px;
-            left: 1000px;
+            left: 1110px;
             width: 50%;
             max-width: 400px;
             margin: 50px auto 0px auto;
@@ -217,7 +241,7 @@
     </div>
     <div class="button">
         <form class="d-flex">
-            <button type="button" class="btn btn-primary" onclick="location.href='register'"><b>이건 몰랐지?!신조어 등록하기</b></button>
+            <button type="button" class="btn btn-primary" onclick="location.href='word_register'"><b>이건 몰랐지?!신조어 등록하기</b></button>
         </form>
     </div>
     </div>
@@ -227,63 +251,45 @@
 <div class="mycards">
     <div class="row row-cols-1 row-cols-md-4 g-4">
         <div class="col">
-            <div class="card h-100">
-                <img src="https://w.namu.la/s/22e9641b0350909fd2c7b809bcc16df2a4c1b5ea7fa8ca404e3b818870606598cf8c361c1acc407804bd2ab18dcd7bd194944c4d4aae0e43c6f45108f49013e8fdf7aa9c5d655c1f75d8422651933a0c82942b4c548e9de4280b73767b67742f18afaf8448e74f2bd7afa2bdfc4c625f"
-                     class="card-img-top" alt="...">
+            <div class="card">
             </div>
         </div>
     </div>
 </div>
 
 <div class="mybtns2">
-    <button type = "button" onclick="like()" class="btn btn-light"><p id="likeCounter">💖 <b>유익했어요: 0</b></p></button>
-    <!--<p id="likeCounter">Likes: 0</p>-->
-    <script>
+  <button type="button" onclick="like()" class="btn btn-light">
+    <p id="likeCounter">💖 <b>유익했어요: 0</b></p>
+  </button>
+  <script>
     let count = 0;
+
+    if (localStorage.getItem("likeCount")) {
+      count = parseInt(localStorage.getItem("likeCount"));
+    }
+
+    document.getElementById("likeCounter").innerHTML =
+      "💖 <b>유익했어요:</b> " + count;
 
     function like() {
       count++;
-      document.getElementById("likeCounter").innerHTML = "💖 <b>유익했어요:</b> " + count;
+      document.getElementById("likeCounter").innerHTML =
+        "💖 <b>유익했어요:</b> " + count;
+      localStorage.setItem("likeCount", count);
     }
   </script>
 </div>
 
-<div class="mypost">
+<div class="mypost" id="name-box">
     <div style="position: relative; top:-30px;">
-        <h7><b>작성자 :</b></h7>
+        <h7><b>작성자 : </b></h7><span id="creator"></span>
     </div>
-
-    <!--<script>
-             function elapsedTime(date) {
-                 const start = new Date(date);
-                 const end = new Date();
-
-                 const diff = (end - start) / 1000;
-
-                 const times = [
-                     {name: '년', milliSeconds: 60 * 60 * 24 * 365},
-                     {name: '개월', milliSeconds: 60 * 60 * 24 * 30},
-                     {name: '일', milliSeconds: 60 * 60 * 24},
-                     {name: '시간', milliSeconds: 60 * 60},
-                     {name: '분', milliSeconds: 60},
-                 ];
-
-                 for (const value of times) {
-                     const betweenTime = Math.floor(diff / value.milliSeconds);
-
-                     if (betweenTime > 0) {
-                         return `${betweenTime}${value.name} 전`;
-                     }
-                 }
-                 return '방금 전';
-             }
-
-             elapsedTime('2022-11-15');
-     </scrpit>-->
-
+    <div style="position: relative; top:-5px;">
+        <h7><b>신조어</b></h7>
+    </div>
     <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">신조어</label>
+        <textarea class="form-control" id="floatingInput" placeholder="name@example.com" type="email"></textarea>
+        <label for="floatingInput"></label>
     </div>
     <div style="position: relative; top:-5px;">
         <h7><b>설명</b></h7>
@@ -291,18 +297,18 @@
     <div class="form-floating">
         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
                   style="height: 200px"></textarea>
-        <label for="floatingTextarea2">코멘트</label>
+        <label for="floatingTextarea2"><label>
     </div>
     <div style="position: relative; top:10px;">
         <h7><b>신조어 사용 연령층</b></h7>
     </div>
     <div class="mybtns">
-        <button type="button" class="btn btn-secondary">10대</button>
-        <button type="button" class="btn btn-secondary">20대</button>
+        <!--<button type="button" class="btn btn-secondary">10대</button>
+        <button type="button" class="btn btn-secondary">20대</button>-->
     </div>
     <div class="video">
-        <iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="250" frameborder=0
-                allowfullscreen></iframe>
+        <!--<iframe src="https://www.youtube.com/embed/xBQaFMcO5pc" top="10" width="450" height="250" frameborder=0
+                allowfullscreen></iframe>-->
     </div>
     <!--<div class="mypost">
         <div class="form-floating mb-3">

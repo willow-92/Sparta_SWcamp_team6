@@ -2763,6 +2763,8 @@ textarea.form-control-lg {
   z-index: 0;
 }
 
+
+
 .input-group-text {
   display: flex;
   align-items: center;
@@ -3497,6 +3499,12 @@ textarea.form-control-lg {
 .btn-sm, .btn-group-sm > .btn {
   padding: 0rem 0rem;
   font-size: 0.875rem;
+  border-radius: 0.2rem;
+}
+
+.btn-sm2 {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.76rem;
   border-radius: 0.2rem;
 }
 
@@ -4350,6 +4358,8 @@ textarea.form-control-lg {
   .navbar-expand-xxl .navbar-nav {
     flex-direction: row;
   }
+
+
   .navbar-expand-xxl .navbar-nav .dropdown-menu {
     position: absolute;
   }
@@ -4541,7 +4551,7 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: 1px solid #e1e1e1;
   border-radius: 0.5rem;
-  align-items: left;
+  align-items: center;
   overflow: hidden;
   vertical-align: top;
 }
